@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jenis_Surat;
+use App\Models\warga;
 
-class jenisSuratController extends Controller
+class WargaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data['jenisSurat'] = Jenis_Surat::all();
-           return view('guest.jenisSurat.tabelJenis', $data);
+          $data['warga'] = Warga::all();
+           return view('guest.warga.tabelWarga', $data);
     }
 
     /**
@@ -21,7 +21,7 @@ class jenisSuratController extends Controller
      */
     public function create()
     {
-        return view('guest.jenisSurat.create');
+		return view('guest.warga.create');
     }
 
     /**
@@ -29,14 +29,19 @@ class jenisSuratController extends Controller
      */
     public function store(Request $request)
     {
-        $data['kode'] = $request->kode;
-		$data['nama_jenis'] = $request->nama_jenis;
-		$data['syarat_json'] = $request->syarat_json;
+        // dd($request->all());
+        $data['no_ktp'] = $request->no_ktp;
+		$data['nama'] = $request->nama;
+		$data['gender'] = $request->gender;
+		$data['agama'] = $request->agama;
+		$data['pekerjaan'] = $request->pekerjaan;
+		$data['phone'] = $request->phone;
+        $data['email'] = $request->email;
 		
-		Jenis_Surat::create($data);
+		warga::create($data);
 		
-		// return redirect()->route('jenis-surat.index')->with('success','Penambahan Data Berhasil!');
-        return view('guest.responJenis')->with('success','Penambahan Data Berhasil!');
+		// return redirect()->route('warga.index')->with('success','Penambahan Data Berhasil!');
+        return view('guest.responWarga');
     }
 
     /**
