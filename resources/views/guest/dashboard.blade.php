@@ -1,145 +1,9 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Layanan Mandiri dan Surat</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="{{asset('assets-guest/css/bootstrap.min.css')}}">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="{{asset('assets-guest/css/style.css')}}">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="{{asset('assets-guest/css/responsive.css')}}">
-      <!-- fevicon -->
-      <link rel="icon" href="{{asset('assets-guest/images//fevicon.png')}}" type="image/gif" />
-      <!-- fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Sen:400,700,800&display=swap" rel="stylesheet">
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="{{asset('assets-guest/css/jquery.mCustomScrollbar.min.css')}}">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/{{asset('assets-guest/css/font-awesome.css')}}">
-   </head>
-   <body>
-      <div class="header_section">
-         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="index.html"><img src="{{asset('assets-guest/images//logo.png')}}"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('warga.create') }}">Data Warga</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="warga.create">Data Warga</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="hosting.html">Jenis Surat</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="testimonial.html">Permohonan Surat</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="domain.html">Berkas Persyaratan</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Riwayat Status Surat</a>
-                     </li>
-                     <li class="nav-item">
-                        <!-- <a class="nav-link" href="contact.html">Contact Us</a> -->
-                     </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                  </form>
-               </div>
-            </nav>
-            <div class="custom_bg">
-               <div class="custom_menu">
-                  <ul>enis Sura
-                     <li class="active"><a href="#">Home</a></li>
-                     <li><a href="{{ route('warga.create') }}">Form Tambah Data</a></li>
-                     <li><a href="{{ route('jenis-surat.create') }}">Form Tambah Jenis Surat</a></li>
-                     <li><a href="{{ route('warga.index') }}">Tabel Data Warga</a></li>
-                     <li><a href="{{ route('jenis-surat.index') }}">Tabel Data Jenis Surat</a></li>
-                     <li><a href="services.html">Riwayat Status Surat</a></li>
-                     <!-- <li><a href="contact.html">Contact Us</a></li> -->
-                  </ul>
-               </div>
-               <form class="form-inline my-2 my-lg-0">
-                  <div class="search_btn">
-                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                     <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                  </div>
-               </form>
-            </div>
-         </div>
-         <!-- banner section start --> 
-         <div class="banner_section layout_padding">
-            <div id="my_slider" class="carousel slide" data-ride="carousel">
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <h1 class="banner_taital">Layanan Mandiri <br>dan Surat</h1>
-                              <div class="read_bt"><a href="#">Selengkapnya</a></div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="banner_img"><img src="{{asset('assets-guest/images//banner-img.png')}}"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <h1 class="banner_taital">Layanan Mandiri <br>dan Surat</h1>
-                              <div class="read_bt"><a href="#">Selengkapnya</a></div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="banner_img"><img src="{{asset('assets-guest/images//banner-img.png')}}"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="carousel-item">
-                     <div class="container">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <h1 class="banner_taital">Layanan Mandiri <br>dan Surat</h1>
-                              <div class="read_bt"><a href="#">Selengkapnya</a></div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="banner_img"><img src="{{asset('assets-guest/images//banner-img.png')}}"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-               <i class="fa fa-angle-left"></i>
-               </a>
-               <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-               <i class="fa fa-angle-right"></i>
-               </a>
-            </div>
-         </div>
-         <!-- banner section end -->
-      </div>
-      <!-- header section end -->
-      <!-- domain section start -->
+    @extends('layouts.guest.app')
+    @section('content')
+    <!-- start main content -->
       <div class="domain_section">
          <div class="container">
             <div class="domain_box">
@@ -162,8 +26,6 @@
             </div>
          </div>
       </div>
-      <!-- domain section end -->
-      <!-- about section start -->
       <div class="about_section layout_padding">
          <div class="container">
             <div class="row">
@@ -191,8 +53,6 @@
             </div>
          </div>
       </div>
-      <!-- about section end -->
-      <!-- hosting section start -->
       <div class="hosting_section layout_padding">
          <div class="container">
             <div class="row">
@@ -207,8 +67,6 @@
             </div>
          </div>
       </div>
-      <!-- hosting section end -->
-      <!-- pricing section start -->
       <div class="pricing_section layout_padding">
          <div class="container">
             <div class="row">
@@ -253,8 +111,6 @@
             </div>
          </div>
       </div>
-      <!-- pricing section end -->
-      <!-- services section start -->
       <div class="services_section layout_padding">
          <div class="container">
             <div class="row">
@@ -379,8 +235,6 @@
             </div>
          </div>
       </div>
-      <!-- services section end -->
-      <!-- testimonial section start -->
       <div class="testimonial_section layout_padding">
          <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -436,8 +290,6 @@
             </div>
          </div>
       </div>
-      <!-- testimonial section end -->
-      <!-- newslatter section start -->
       <div class="newslatter_section">
          <div class="container">
             <div class="row">
@@ -451,77 +303,7 @@
             </div>
          </div>
       </div>
-      <!-- newslatter section end -->
-      <!-- footer section start -->
-      <div class="footer_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-4">
-                  <h3 class="footer_text">Useful links</h3>
-                  <div class="footer_menu">
-                     <ul>
-                        <li class="active"><a href="guest.warga.create"><span class="angle_icon active"><i class="fa fa-arrow-right" aria-hidden="true"></i></span> Data Warga</a></li>
-                        <li><a href="#"><span class="angle_icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>  About</a></li>
-                        <li><a href="services.html"><span class="angle_icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span> Services</a></li>
-                        <li><a href="domain.html"><span class="angle_icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span> Domain</a></li>
-                        <li><a href="testimonial.html"><span class="angle_icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>  Testimonial</a></li>
-                        <li><a href="contact.html"><span class="angle_icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>  Contact Us</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-sm-4">
-                  <h3 class="footer_text">Address</h3>
-                  <div class="location_text">
-                     <ul>
-                        <li>
-                           <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-map-marker" aria-hidden="true"></i></span>It is a long established fact that a<br> reader will be distracted</a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-phone" aria-hidden="true"></i></span>(+71) 1234567890<br>(+71) 1234567890
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-envelope" aria-hidden="true"></i></span>demo@gmail.com
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-sm-4">
-                  <div class="footer_main">
-                     <h3 class="footer_text">Find Us</h3>
-                     <p class="dummy_text">more-or-less normal distribution </p>
-                     <div class="social_icon">
-                        <ul>
-                           <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                           <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                           <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- footer section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">2025 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a>. Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
-         </div>
-      </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="{{asset('assets-guest/js/jquery.min.js')}}"></script>
-      <script src="{{asset('assets-guest/js/popper.min.js')}}"></script>
-      <script src="{{asset('assets-guest/js/bootstrap.bundle.min.js')}}"></script>
-      <script src="{{asset('assets-guest/js/jquery-3.0.0.min.js')}}"></script>
-      <script src="{{asset('assets-guest/js/plugin.js')}}"></script>
-      <!-- sidebar -->
-      <script src="{{asset('assets-guest/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-      <script src="{{asset('assets-guest/js/custom.js')}}"></script>
+       <!-- main content end -->
+    @endsection
    </body>
 </html>

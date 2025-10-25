@@ -73,6 +73,8 @@ class WargaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user->delete();
+        return redirect()->route('admin.users.index')
+                         ->with('success', 'User berhasil dihapus!');
     }
 }

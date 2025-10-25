@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Data Jenis Surat</title>
+   <title>Daftar Jenis Surat</title>
 
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="{{ asset('assets-guest/css/bootstrap.min.css') }}">
@@ -11,122 +11,173 @@
 
    <style>
       body {
-         background-color: #f8f9fa;
+         background-color: #f7f8fc;
          font-family: 'Poppins', sans-serif;
-      }
-
-      .navbar {
-         background: #fff;
-         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-
-      .table-container {
-         background: #fff;
-         padding: 40px 50px;
-         border-radius: 15px;
-         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-         margin: 60px auto;
-         max-width: 95%;
       }
 
       h2 {
          text-align: center;
-         color: #007bff;
+         color: #0a1931;
          font-weight: 700;
+         margin-top: 40px;
          margin-bottom: 30px;
       }
 
-      thead {
-         background-color: #007bff;
+      .container-cards {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+         gap: 25px;
+         max-width: 1100px;
+         margin: auto;
+         padding: 20px;
+      }
+
+      .card-jenis {
+         background-color: #fff;
+         border-radius: 16px;
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+         overflow: hidden;
+         transition: all 0.3s ease;
+         border-top: 6px solid #0a1931;
+         position: relative;
+      }
+
+      .card-jenis:hover {
+         transform: translateY(-6px);
+         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-header {
+         height: 140px;
+         background: linear-gradient(135deg, #0a1931, #c82333);
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         color: #fff;
+         text-align: center;
+         font-weight: 600;
+         font-size: 1.1rem;
+         position: relative;
+      }
+
+      .card-header i {
+         font-size: 35px;
+         margin-bottom: 8px;
+         color: #fff;
+      }
+
+      .card-body {
+         padding: 20px;
+      }
+
+      .kode-badge {
+         display: inline-block;
+         background: #0a1931;
          color: white;
+         padding: 6px 12px;
+         border-radius: 8px;
+         font-size: 0.85rem;
+         margin-bottom: 12px;
       }
 
-      tbody tr:hover {
-         background-color: #f1f1f1;
+      .card-body h5 {
+         font-weight: 600;
+         color: #0a1931;
+         margin-bottom: 10px;
+         text-align: center;
       }
 
-      .btn-primary {
-         background-color: #007bff;
+      .card-body ul {
+         padding-left: 18px;
+         margin-bottom: 0;
+      }
+
+      .card-body li {
+         font-size: 0.9rem;
+         color: #333;
+         line-height: 1.5;
+      }
+
+      .btn-detail {
+         display: inline-block;
+         text-decoration: none;
+         background-color: #c82333;
+         color: #fff;
+         padding: 8px 14px;
+         border-radius: 8px;
+         font-size: 0.9rem;
+         font-weight: 500;
+         transition: all 0.3s ease;
+      }
+
+      .btn-detail:hover {
+         background-color: #0a1931;
+         color: #fff;
+      }
+
+      .card-footer {
+         text-align: center;
+         padding: 15px;
+         background-color: #f8f9fa;
+      }
+
+      .btn-add {
+         background-color: #c82333;
          border: none;
+         font-weight: 500;
+         padding: 10px 18px;
+         border-radius: 8px;
+         color: white;
+         transition: all 0.3s ease;
       }
 
-      .btn-primary:hover {
-         background-color: #0056b3;
+      .btn-add:hover {
+         background-color: #0a1931;
       }
    </style>
+
+   <!-- Icons -->
+   <script src="https://kit.fontawesome.com/a2e0ad2d3c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-   <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-      <div class="container">
-         <a class="navbar-brand fw-bold text-uppercase text-dark" href="#">Layanan Mandiri</a>
-         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-               <li class="nav-item">
-                  <a class="nav-link" href="{{ route('warga.index') }}">Data Warga</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link active fw-semibold text-primary" href="{{ route('jenis-surat.index') }}">Jenis Surat</a>
-               </li>
-            </ul>
+
+   <h2>📋 Daftar Jenis Surat</h2>
+
+   <div class="container-cards">
+      @forelse($jenisSurat as $item)
+      <div class="card-jenis">
+         <div class="card-header">
+            <i class="fas fa-file-alt"></i>
+            {{ $item->nama_jenis }}
+         </div>
+         <div class="card-body text-center">
+            <span class="kode-badge">Kode: {{ $item->kode }}</span>
+            <h5>Syarat Pengajuan:</h5>
+            @php
+               $syarat = json_decode($item->syarat_json, true);
+            @endphp
+            @if(is_array($syarat))
+               <ul class="text-start">
+                  @foreach($syarat as $s)
+                     <li>{{ $s }}</li>
+                  @endforeach
+               </ul>
+            @else
+               <p>{{ $item->syarat_json }}</p>
+            @endif
          </div>
       </div>
-   </nav>
-
-   <!-- Tabel Data Jenis Surat -->
-   <div class="table-container">
-      <h2>Daftar Jenis Surat</h2>
-
-      <div class="table-responsive">
-         <table class="table table-bordered table-striped align-middle text-center">
-            <thead>
-               <tr>
-                  <th>No</th>
-                  <th>Kode Surat</th>
-                  <th>Nama Jenis Surat</th>
-                  <th>Syarat</th>
-                  <th>Aksi</th>
-               </tr>
-            </thead>
-            <tbody>
-               @forelse($jenisSurat as $index => $item)
-               <tr>
-                  <td>{{ $index + 1 }}</td>
-                  <td>{{ $item->kode }}</td>
-                  <td>{{ $item->nama_jenis }}</td>
-                  <td>
-                     @php
-                        $syarat = json_decode($item->syarat_json, true);
-                     @endphp
-                     @if(is_array($syarat))
-                        <ul class="text-start mb-0">
-                           @foreach($syarat as $s)
-                              <li>{{ $s }}</li>
-                           @endforeach
-                        </ul>
-                     @else
-                        {{ $item->syarat_json }}
-                     @endif
-                  </td>
-                  <td>
-                  </td>
-               </tr>
-               @empty
-               <tr>
-                  <td colspan="5" class="text-center text-muted">Belum ada data jenis surat.</td>
-               </tr>
-               @endforelse
-            </tbody>
-         </table>
-      </div>
-
-      <div class="text-end mt-3">
-         <a href="{{ route('jenis-surat.create') }}" class="btn btn-primary">+ Tambah Jenis Surat</a>
-      </div>
+      @empty
+         <p class="text-center text-muted">Belum ada data jenis surat.</p>
+      @endforelse
    </div>
 
-   <!-- Bootstrap JS -->
+   <div class="text-center my-4">
+      <a href="{{ route('dashboard') }}" class="btn-add">⬅ Kembali ke Dashboard</a>
+   </div>
+
    <script src="{{ asset('assets-guest/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

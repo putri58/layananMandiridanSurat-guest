@@ -3,38 +3,68 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    // Menampilkan halaman login
-    public function index()
+    /**
+     * Menampilkan view form login.
+     */
+    public function showLoginForm()
     {
-        return view('login'); // login.blade.php di folder resources/views
+        // Asumsi: View login berada di resource/views/login.blade.php
+        return view('login'); 
     }
 
-    // Memproses login
+    /**
+     * Method index() untuk menangani route /auth (jika route resource salah).
+     * Mengarahkan ke form login menggunakan nama route 'login'.
+     */
+    public function index()
+    {
+        return redirect()->route('login'); 
+    }
+
+    /**
+     * Memproses data login (email dan password).
+     */
     public function login(Request $request)
     {
-        // Validasi sederhana sesuai aturan
-        $request->validate([
-            'username' => 'required',
-            'password' => [
-                'required',
-                'min:3',
-                'regex:/[A-Z]/' // harus ada huruf kapital
-            ],
-        ], [
-            'username.required' => 'Username wajib diisi.',
-            'password.required' => 'Password wajib diisi.',
-            'password.min' => 'Password minimal 3 karakter.',
-            'password.regex' => 'Password harus mengandung huruf kapital.',
+        // 1. Validasi data
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ]);
 
-        // Cek apakah username dan password benar (contoh statis)
-        if ($request->username === 'Putri' && $request->password === 'Agustin58') {
-            return view('/pesanLogin')->with('success', 'Login berhasil! Selamat datang di dashboard.');
-        } else {
-            return back()->with('error', 'Username atau password salah. Silakan coba lagi.');
+        // 2. Autentikasi
+        if (Auth::attempt($credentials)) {
+            
+            // Login berhasil
+            $request->session()->regenerate();
+            // Arahkan ke tujuan awal atau ke /dashboard
+            return redirect()->intended('/dashboard'); 
+            
         }
+        
+        // 3. Login Gagal
+        return back()->withInput(['email'])->withErrors([
+        'email' => 'Email atau Password yang Anda masukkan tidak valid.',
+    ])->with('error', 'Login Gagal. Silakan coba lagi.');
+    }
+
+    /**
+     * Mengeluarkan pengguna (logout).
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout(); 
+
+        $request->session()->invalidate(); 
+
+        $request->session()->regenerateToken(); 
+
+        // Redirect ke URL /login
+        return redirect('/login'); 
     }
 }
