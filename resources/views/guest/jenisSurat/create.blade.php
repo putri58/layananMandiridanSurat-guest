@@ -132,16 +132,18 @@
         </div>
     </section>
 
+            @if (session('info'))
+                <div class="alert alert-info">
+                    {!! session('info') !!}
+                </div>
+            @endif
+
     <div class="form-card">
         <div class="form-header">
             Form Tambah Jenis Surat
         </div>
 
         <div class="form-body">
-            @if (session('info'))
-                <div class="alert alert-info">{{ session('info') }}</div>
-            @endif
-            
             <form action="{{ route('jenis-surat.store') }}" method="POST" id="jenisSuratForm">
                 @csrf
 

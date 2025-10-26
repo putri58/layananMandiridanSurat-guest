@@ -135,14 +135,15 @@
         </div>
     </section>
 
-    <div class="container">
-        <div class="form-container">
-
+    
             @if (session('info'))
                 <div class="alert alert-info">
                     {!! session('info') !!}
                 </div>
             @endif
+
+    <div class="container">
+        <div class="form-container">
 
             <form action="{{ route('warga.store') }}" method="POST" id="formWarga">
                 @csrf

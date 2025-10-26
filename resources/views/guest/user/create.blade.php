@@ -125,12 +125,16 @@
             <p class="mb-0" style="font-size: 0.95rem; opacity: 0.9;">Silakan isi data warga dengan benar dan lengkap untuk proses layanan mandiri.</p>
         </div>
     </section>
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
     {{-- Container utama form --}}
     <div class="form-card">
         <div class="form-header">
             Form Tambah Pengguna (User)
         </div>
-
         <div class="form-body">
             {{-- Sesuaikan action route Anda --}}
             <form action="{{ route('user.store') }}" method="POST">

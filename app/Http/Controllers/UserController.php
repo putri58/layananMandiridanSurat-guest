@@ -34,7 +34,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-         $data['name'] = $request->name;
+        $data['name'] = $request->name;
         $data['email']  = $request->email;
         $data['password']   = $data['password'] = Hash::make($request->password);;
         $data['password_confirmation']     = $request->password_confirmation;

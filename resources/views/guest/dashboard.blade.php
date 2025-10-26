@@ -32,22 +32,22 @@
                <div class="col-md-4">
                   <div class="about_box">
                      <div class="icon_1"><img src="{{asset('assets-guest/images//icon-1.png')}}"></div>
-                     <h3 class="faster_text">Faster Loading Speed</h3>
-                     <p class="lorem_text">ike readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,</p>
+                     <h3 class="faster_text">Pelayanan Yang cepat</h3>
+                     <p class="lorem_text">Dengan sistem digital terintegrasi, Anda tidak perlu lagi antre berjam-jam. Pengajuan hingga verifikasi berkas diproses seefisien mungkin, memastikan dokumen Anda siap dalam waktu yang jauh lebih singkat</p>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="about_box">
                      <div class="icon_1"><img src="{{asset('assets-guest/images//icon-2.png')}}"></div>
-                     <h3 class="faster_text">Faster Loading Speed</h3>
-                     <p class="lorem_text">ike readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,</p>
+                     <h3 class="faster_text">Terpercaya</h3>
+                     <p class="lorem_text">Kami menjamin bahwa semua dokumen yang Anda cetak atau terima dari portal ini adalah sah dan aman, didukung oleh sistem keamanan data mutakhir untuk melindungi informasi sensitif Anda</p>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="about_box">
                      <div class="icon_1"><img src="{{asset('assets-guest/images//icon-3.png')}}"></div>
-                     <h3 class="faster_text">Faster Loading Speed</h3>
-                     <p class="lorem_text">ike readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,</p>
+                     <h3 class="faster_text">Fast Respons</h3>
+                     <p class="lorem_text">Setiap pertanyaan atau kendala Anda akan ditanggapi dengan sigap, membuat Anda selalu terinformasi mengenai perkembangan permohonan surat Anda dari awal hingga akhir</p>
                   </div>
                </div>
             </div>
@@ -57,9 +57,8 @@
          <div class="container">
             <div class="row">
                <div class="col-md-6">
-                  <h1 class="hosting_taital">GRID WEB HOSTING OVERVIEW</h1>
-                  <p class="hosting_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                  <div class="click_bt"><a href="#">Click Here</a></div>
+                  <h1 class="hosting_taital">ABOUT US</h1>
+                  <p class="hosting_text">Kami adalah inovator di balik platform digital yang merevolusi cara masyarakat berinteraksi dengan layanan administrasi surat-menyurat. Layanan Mandiri & Surat dirancang secara komprehensif dan terstruktur untuk memastikan setiap tahapan pengurusan dokumen berjalan efisien, transparan, dan aman </p>
                </div>
                <div class="col-md-6">
                   <div class="hosting_img"><img src="{{asset('assets-guest/images//hosting-img.png')}}"></div>
@@ -71,8 +70,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <h1 class="pricing_taital">Our Pricing Plan</h1>
-                  <p class="pricing_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+                  <h1 class="pricing_taital">AKTIVITAS</h1>
                </div>
             </div>
             <div class="pricing_section_2">
@@ -80,7 +78,7 @@
                   <div class="col-md-4">
                      <div class="pricing_box">
                         <h3 class="number_text">1</h3>
-                        <h5 class="cloud_text">Cloud Hosting</h5>
+                        <h5 class="cloud_text">Tracking Status</h5>
                         <h1 class="dolor_text">$19</h1>
                         <h3 class="monthly_text">MONTHLY</h3>
                         <p class="band_text">5GB bandwidth Free Email Addresses 24/7 security monitoring</p>
@@ -90,7 +88,7 @@
                   <div class="col-md-4">
                      <div class="pricing_box">
                         <h3 class="number_text">2</h3>
-                        <h5 class="cloud_text">VPS Hosting</h5>
+                        <h5 class="cloud_text">Persyaratan</h5>
                         <h1 class="dolor_text">$19</h1>
                         <h3 class="monthly_text">MONTHLY</h3>
                         <p class="band_text">5GB bandwidth Free Email Addresses 24/7 security monitoring</p>
@@ -100,7 +98,7 @@
                   <div class="col-md-4">
                      <div class="pricing_box">
                         <h3 class="number_text">3</h3>
-                        <h5 class="cloud_text">Shared Hosting</h5>
+                        <h5 class="cloud_text">Penandatanganan</h5>
                         <h1 class="dolor_text">$19</h1>
                         <h3 class="monthly_text">MONTHLY</h3>
                         <p class="band_text">5GB bandwidth Free Email Addresses 24/7 security monitoring</p>
@@ -116,7 +114,6 @@
             <div class="row">
                <div class="col-md-12">
                   <h1 class="services_taital">Our Services</h1>
-                  <p class="services_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
                </div>
             </div>
             <div class="services_section_2">
@@ -130,7 +127,7 @@
                                     <img src="{{asset('assets-guest/images//icon-4.png')}}" class="image_1">
                                     <img src="{{asset('assets-guest/images//icon-7.png')}}" class="image_2">
                                  </div>
-                                 <h3 class="wordpress_text">WordPress Hosting</h3>
+                                 <h3 class="wordpress_text">Jenis Surat</h3>
                                  <p class="opposed_text">opposed to using 'Content here, content here', making it look like readable</p>
                               </div>
                            </div>
@@ -140,7 +137,7 @@
                                     <img src="{{asset('assets-guest/images//icon-5.png')}}" class="image_1">
                                     <img src="{{asset('assets-guest/images//icon-5.png')}}" class="image_2">
                                  </div>
-                                 <h3 class="wordpress_text">Cloud Hosting</h3>
+                                 <h3 class="wordpress_text">Permohonan Surat</h3>
                                  <p class="opposed_text">opposed to using 'Content here, content here', making it look like readable</p>
                               </div>
                            </div>
@@ -150,7 +147,7 @@
                                     <img src="{{asset('assets-guest/images//icon-6.png')}}" class="image_1">
                                     <img src="{{asset('assets-guest/images//icon-9.png')}}" class="image_2">
                                  </div>
-                                 <h3 class="wordpress_text">Dedicated Hosting</h3>
+                                 <h3 class="wordpress_text">Berkas Persyaratan</h3>
                                  <p class="opposed_text">opposed to using 'Content here, content here', making it look like readable</p>
                               </div>
                            </div>
@@ -164,7 +161,7 @@
                                     <img src="{{asset('assets-guest/images//icon-4.png')}}" class="image_1">
                                     <img src="{{asset('assets-guest/images//icon-7.png')}}" class="image_2">
                                  </div>
-                                 <h3 class="wordpress_text">WordPress Hosting</h3>
+                                 <h3 class="wordpress_text">Riwayat Status Surat</h3>
                                  <p class="opposed_text">opposed to using 'Content here, content here', making it look like readable</p>
                               </div>
                            </div>
@@ -174,7 +171,7 @@
                                     <img src="{{asset('assets-guest/images//icon-5.png')}}" class="image_1">
                                     <img src="{{asset('assets-guest/images//icon-5.png')}}" class="image_2">
                                  </div>
-                                 <h3 class="wordpress_text">Cloud Hosting</h3>
+                                 <h3 class="wordpress_text">Login</h3>
                                  <p class="opposed_text">opposed to using 'Content here, content here', making it look like readable</p>
                               </div>
                            </div>
@@ -184,7 +181,7 @@
                                     <img src="{{asset('assets-guest/images//icon-6.png')}}" class="image_1">
                                     <img src="{{asset('assets-guest/images//icon-9.png')}}" class="image_2">
                                  </div>
-                                 <h3 class="wordpress_text">Dedicated Hosting</h3>
+                                 <h3 class="wordpress_text">Registrasi</h3>
                                  <p class="opposed_text">opposed to using 'Content here, content here', making it look like readable</p>
                               </div>
                            </div>
