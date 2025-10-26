@@ -39,7 +39,6 @@
                   <div class="col-md-6 ps-md-5 text-white">
                      <h1 class="banner_title">Layanan Mandiri<br>dan Surat</h1>
                      <p class="banner_subtitle">Kemudahan administrasi dalam genggaman Anda.</p>
-                     <a href="#" class="btn-banner">Selengkapnya</a>
                   </div>
                   <div class="col-md-6 text-center">
                      <img src="{{ asset('assets-guest/images/banner-img.png') }}" class="img-fluid" alt="Banner">

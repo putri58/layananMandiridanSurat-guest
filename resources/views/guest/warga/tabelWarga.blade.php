@@ -171,14 +171,14 @@
                   <span class="badge">Telp: {{ $item->phone }}</span>
                </div>
 
-               <div class="actions">
+               <!-- <div class="actions">
                   <a href="{{ route('warga.edit', $item->warga_id) }}" class="btn btn-warning btn-sm">Edit</a>
                   <form action="{{ route('warga.destroy', $item->warga_id) }}" method="POST" class="d-inline">
                      @csrf
                      @method('DELETE')
                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
                   </form>
-               </div>
+               </div> -->
             </div>
          </div>
          @endforeach
