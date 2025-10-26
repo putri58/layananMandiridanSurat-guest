@@ -23,6 +23,7 @@
                <li class="nav-item"><a class="nav-link" href="{{ route('warga.index') }}">Data Warga</a></li>
                <li class="nav-item"><a class="nav-link" href="{{ route('jenis-surat.index') }}">Data Jenis Surat</a></li>
                <li class="nav-item"><a class="nav-link" href="{{ route('user.create') }}">User</a></li>
+               <li class="nav-item"><a class="nav-link" href="{{ route('user.index') }}">Data User</a></li>
             </ul>
          </div>
       </div>
