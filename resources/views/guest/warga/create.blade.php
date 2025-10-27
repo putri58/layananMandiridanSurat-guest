@@ -115,8 +115,8 @@
     }
 
     .btn-secondary-custom {
-        background: var(--navy); /* Biru tua Navy */
-        color: #fff;
+         background: var(--navy);
+        color: #5d79c5ff;
     }
 
     /* Interaktif: Hover Secondary Button */
@@ -135,7 +135,7 @@
         </div>
     </section>
 
-    
+
             @if (session('info'))
                 <div class="alert alert-info">
                     {!! session('info') !!}

@@ -25,21 +25,21 @@
 
     /* Latar belakang halaman utama */
     body {
-        background-color: var(--navy); 
+        background-color: var(--navy);
     }
 
     /* === Card container === */
     .form-card {
         background: #fff;
-        border-radius: 18px; 
-        padding: 0; 
+        border-radius: 18px;
+        padding: 0;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        margin: 60px auto 100px auto; 
+        margin: 60px auto 100px auto;
         max-width: 800px; /* Diperbesar sedikit agar 3 kolom muat */
-        overflow: hidden; 
-        border: 2px solid var(--navy); 
+        overflow: hidden;
+        border: 2px solid var(--navy);
     }
-    
+
     /* === Form Header === */
     .form-header {
         background: linear-gradient(135deg, var(--navy), var(--accent-navy));
@@ -60,7 +60,7 @@
     /* === Label & Input === */
     label {
         font-weight: 700;
-        color: var(--accent-navy); 
+        color: var(--accent-navy);
         margin-bottom: 5px;
         display: block;
     }
@@ -76,10 +76,10 @@
     /* Interaktif: Menggunakan warna Navy saat focus */
     .form-control:focus {
         border-color: var(--navy);
-        box-shadow: 0 0 0 0.25rem rgba(0, 31, 63, 0.2); 
+        box-shadow: 0 0 0 0.25rem rgba(0, 31, 63, 0.2);
         background-color: var(--light-gray);
     }
-    
+
     /* === Tombol Kustom === */
     .btn-custom-base {
         border: none;
@@ -107,9 +107,9 @@
     }
 
     /* Tombol Kembali (Navy) */
-    .btn-back-custom {
+   .btn-back-custom {
         background: var(--navy);
-        color: #fff;
+        color: #5d79c5ff;
     }
     .btn-back-custom:hover {
         background: var(--accent-navy);
@@ -139,17 +139,17 @@
             {{-- Sesuaikan action route Anda --}}
             <form action="{{ route('user.store') }}" method="POST">
                 @csrf
-                
+
                 <div class="row">
                     {{-- Nama Lengkap (Diambil dari input Anda) --}}
                     <div class="col-lg-4 col-md-6 mb-3">
                         <label for="name">Nama Lengkap</label>
-                        <input type="text" 
+                        <input type="text"
                             class="form-control @error('name') is-invalid @enderror"
-                            id="name" 
-                            name="name" 
+                            id="name"
+                            name="name"
                             value="{{ old('name') }}"
-                            placeholder="Nama Lengkap" 
+                            placeholder="Nama Lengkap"
                             required>
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -161,8 +161,8 @@
                         <label for="email">Alamat Email</label>
                         <input type="email" {{-- Tipe diubah ke 'email' --}}
                             class="form-control @error('email') is-invalid @enderror"
-                            id="email" 
-                            name="email" 
+                            id="email"
+                            name="email"
                             value="{{ old('email') }}"
                             placeholder="Email"
                             required>
@@ -174,9 +174,9 @@
                     {{-- Password (Diambil dari input Anda, perbaikan @error ke 'password') --}}
                     <div class="col-lg-4 col-md-6 mb-3">
                         <label for="password">Password</label>
-                        <input type="password" 
+                        <input type="password"
                             class="form-control @error('password') is-invalid @enderror"
-                            id="password" 
+                            id="password"
                             name="password"
                             placeholder="Password"
                             required>
@@ -190,7 +190,7 @@
                         <label for="password_confirmation">Konfirmasi Password</label>
                         <input type="password"
                             class="form-control @error('password_confirmation') is-invalid @enderror"
-                            id="password_confirmation" 
+                            id="password_confirmation"
                             name="password_confirmation"
                             placeholder="Ulangi Password"
                             required>

@@ -26,21 +26,21 @@
 
     /* Latar belakang halaman utama */
     body {
-        background-color: var(--navy); 
+        background-color: var(--navy);
     }
 
     /* === Card container (Menggantikan .form-card) === */
     .form-card {
         background: #fff;
-        border-radius: 18px; 
+        border-radius: 18px;
         padding: 0; /* Padding dipindahkan ke form-body */
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         margin: 60px auto 100px auto; /* Margin untuk memposisikan di tengah */
         max-width: 600px; /* Batasi lebar container */
         overflow: hidden; /* Memastikan header yang bulat terlihat baik */
-        border: 2px solid var(--navy); 
+        border: 2px solid var(--navy);
     }
-    
+
     /* === Form Header === */
     .form-header {
         background: linear-gradient(135deg, var(--navy), var(--accent-navy));
@@ -61,7 +61,7 @@
     /* === Label & Input === */
     label {
         font-weight: 700;
-        color: var(--accent-navy); 
+        color: var(--accent-navy);
         margin-bottom: 5px;
         display: block;
     }
@@ -80,10 +80,10 @@
     .form-control:focus,
     .form-select:focus {
         border-color: var(--navy);
-        box-shadow: 0 0 0 0.25rem rgba(0, 31, 63, 0.2); 
+        box-shadow: 0 0 0 0.25rem rgba(0, 31, 63, 0.2);
         background-color: var(--light-gray);
     }
-    
+
     /* === Tombol Kustom === */
     /* Tombol Simpan (Merah) */
     .btn-submit-custom {
@@ -124,7 +124,7 @@
 </style>
 
 <body>
-   
+
 <section class="banner-section">
         <div class="container">
             <h2>Form Input Jenis Surat</h2>

@@ -12,7 +12,7 @@
             --accent-navy: #003366; /* Navy yang sedikit lebih terang */
             --accent-red: #d90404; /* Merah lebih gelap */
         }
-        
+
         /* === Latar Belakang Utama (Navy) === */
         body {
             font-family: Arial, sans-serif;
@@ -141,7 +141,7 @@
 
         <form action="/auth/login" method="POST">
             @csrf
-            
+
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" value="{{ old('email') }}" placeholder="Masukkan email Anda">
 

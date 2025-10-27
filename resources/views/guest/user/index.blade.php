@@ -173,7 +173,7 @@
       @endif
 
       <div class="text-end mt-4">
-         <a href="{{ route('warga.create') }}" class="btn btn-primary">+ Tambah user</a>
+         {{-- <a href="{{ route('warga.create') }}" class="btn btn-primary">+ Tambah user</a> --}}
          <a href="{{ route('dashboard') }}" class="btn btn-primary">Kembali</a>
       </div>
    </div>

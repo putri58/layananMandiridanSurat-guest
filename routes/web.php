@@ -10,7 +10,7 @@ use App\Http\Controllers\JenisSuratController;
 use App\Http\Controllers\BerkasPersyaratanController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.dashboard');
 });
 
 Route::get('/berkas-persyaratan', [BerkasPersyaratanController::class, 'index'])

@@ -17,14 +17,42 @@
          <!-- NAV LINKS -->
          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-lg-center">
-               <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Beranda</a></li>
-               <li class="nav-item"><a class="nav-link" href="{{ route('warga.create') }}">Tambah Data Warga</a></li>
-               <li class="nav-item"><a class="nav-link" href="{{ route('jenis-surat.create') }}">Tambah Jenis Surat</a></li>
-               <li class="nav-item"><a class="nav-link" href="{{ route('warga.index') }}">Data Warga</a></li>
-               <li class="nav-item"><a class="nav-link" href="{{ route('jenis-surat.index') }}">Data Jenis Surat</a></li>
-               <li class="nav-item"><a class="nav-link" href="{{ route('user.create') }}">User</a></li>
-               <li class="nav-item"><a class="nav-link" href="{{ route('user.index') }}">Data User</a></li>
-            </ul>
+    <!-- Logo / Beranda -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('dashboard') }}">
+            <img src="{{ asset('assets-guest/images/logo-beranda.png') }}" alt="Beranda">
+        </a>
+    </li>
+
+    <!-- Tambah Data -->
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('warga.create') }}">+Warga</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('jenis-surat.create') }}">+Jenis</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('user.create') }}">+User</a>
+    </li>
+
+    <!-- Data List -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('warga.index') }}">Data Warga</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('jenis-surat.index') }}">Data Jenis</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('user.index') }}">Data User</a>
+    </li>
+
+    <!-- Login -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('login') }}">
+        <img src="{{ asset('assets-guest/images/login.png') }}" alt="login">
+    </li>
+</ul>
          </div>
       </div>
    </nav>

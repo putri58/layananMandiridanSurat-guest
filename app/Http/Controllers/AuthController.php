@@ -14,7 +14,7 @@ class AuthController extends Controller
     public function showLoginForm()
     {
         // Asumsi: View login berada di resource/views/login.blade.php
-        return view('login'); 
+        return view('guest.auth.login');
     }
 
     /**
@@ -23,7 +23,7 @@ class AuthController extends Controller
      */
     public function index()
     {
-        return redirect()->route('login'); 
+        return redirect()->route('login');
     }
 
     /**
@@ -39,14 +39,14 @@ class AuthController extends Controller
 
         // 2. Autentikasi
         if (Auth::attempt($credentials)) {
-            
+
             // Login berhasil
             $request->session()->regenerate();
             // Arahkan ke tujuan awal atau ke /dashboard
-            return redirect()->intended('/dashboard'); 
-            
+            return redirect()->intended('/dashboard');
+
         }
-        
+
         // 3. Login Gagal
         return back()->withInput(['email'])->withErrors([
         'email' => 'Email atau Password yang Anda masukkan tidak valid.',
@@ -58,13 +58,13 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        Auth::logout(); 
+        Auth::logout();
 
-        $request->session()->invalidate(); 
+        $request->session()->invalidate();
 
-        $request->session()->regenerateToken(); 
+        $request->session()->regenerateToken();
 
         // Redirect ke URL /login
-        return redirect('/login'); 
+        return redirect('/login');
     }
 }
