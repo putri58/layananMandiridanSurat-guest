@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    @extends('layouts.guest.app')
+    @section('content')
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Data Warga</title>
@@ -193,5 +195,6 @@
 
    <!-- Bootstrap JS -->
    <script src="{{ asset('assets-guest/js/bootstrap.bundle.min.js') }}"></script>
+   @endsection
 </body>
 </html>

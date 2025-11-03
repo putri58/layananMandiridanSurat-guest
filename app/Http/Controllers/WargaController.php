@@ -13,7 +13,7 @@ class WargaController extends Controller
     public function index()
     {
           $data['warga'] = Warga::all();
-           return view('guest.warga.tabelWarga', $data);
+           return view('pages.warga.tabelWarga', $data);
     }
 
     /**
@@ -21,7 +21,7 @@ class WargaController extends Controller
      */
     public function create()
     {
-		return view('guest.warga.create');
+		return view('pages.warga.create');
     }
 
     /**
@@ -37,11 +37,11 @@ class WargaController extends Controller
 		$data['pekerjaan'] = $request->pekerjaan;
 		$data['phone'] = $request->phone;
         $data['email'] = $request->email;
-		
+
 		warga::create($data);
-		
+
 		// return redirect()->route('warga.index')->with('success','Penambahan Data Berhasil!');
-        return view('guest.responWarga')->with('success', 'Penambahan Data Berhasil!');
+        return view('pages.responWarga')->with('success', 'Penambahan Data Berhasil!');
     }
 
     /**

@@ -11,7 +11,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.about.create');
     }
 
     /**
@@ -19,7 +19,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('guest.about.create');
+        // return view('pages.about.create');
     }
 
     /**

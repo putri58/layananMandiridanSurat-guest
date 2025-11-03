@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         $data['user'] = User::all();
-        return view('guest.user.index', $data);
+        return view('pages.user.index', $data);
     }
 
     //---------------------------------------------------------
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('guest.user.create'); // <-- Tampilkan view form tambah user
+        return view('pages.user.create'); // <-- Tampilkan view form tambah user
     }
 
     //---------------------------------------------------------
@@ -61,7 +61,7 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $data ['user'] = User::findOrFail($id);
-        return view('guest.user.edit', $data);
+        return view('pages.user.edit', $data);
     }
 
     //---------------------------------------------------------

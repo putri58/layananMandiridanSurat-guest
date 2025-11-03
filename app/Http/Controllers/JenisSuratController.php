@@ -13,7 +13,7 @@ class jenisSuratController extends Controller
     public function index()
     {
         $data['jenisSurat'] = Jenis_Surat::all();
-           return view('guest.jenisSurat.tabelJenis', $data);
+           return view('pages.jenisSurat.tabelJenis', $data);
     }
 
     /**
@@ -21,7 +21,7 @@ class jenisSuratController extends Controller
      */
     public function create()
     {
-        return view('guest.jenisSurat.create');
+        return view('pages.jenisSurat.create');
     }
 
     /**
@@ -32,11 +32,11 @@ class jenisSuratController extends Controller
         $data['kode'] = $request->kode;
 		$data['nama_jenis'] = $request->nama_jenis;
 		$data['syarat_json'] = $request->syarat_json;
-		
+
 		Jenis_Surat::create($data);
-		
+
 		// return redirect()->route('jenis-surat.index')->with('success','Penambahan Data Berhasil!');
-        return view('guest.responJenis')->with('success','Penambahan Data Berhasil!');
+        return view('pages.responJenis')->with('success','Penambahan Data Berhasil!');
     }
 
     /**

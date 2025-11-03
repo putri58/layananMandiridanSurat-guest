@@ -14,7 +14,7 @@ class AuthController extends Controller
     public function showLoginForm()
     {
         // Asumsi: View login berada di resource/views/login.blade.php
-        return view('guest.auth.login');
+        return view('pages.auth.login');
     }
 
     /**
