@@ -50,6 +50,11 @@
                                     <i data-feather="folder" class="me-2 text-success"></i> Tambah User
                                 </a>
                             </li>
+                             <li>
+                                <a class="dropdown-item" href="{{ route('permohonan.create') }}">
+                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Permohonan
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     {{-- endtambahdata --}}
@@ -73,6 +78,11 @@
                             <li>
                                 <a class="dropdown-item" href="{{ route('user.index') }}">
                                     <i data-feather="folder" class="me-2 text-success"></i> Data User
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('permohonan.index') }}">
+                                    <i data-feather="folder" class="me-2 text-success"></i> Daftar Permohonan
                                 </a>
                             </li>
                         </ul>
@@ -120,7 +130,7 @@
                             <div class="col-md-6 ps-md-5 text-white">
                                 <h1 class="banner_title">Digitalisasi Layanan<br>Desa Anda</h1>
                                 <p class="banner_subtitle">Cepat, mudah, dan transparan.</p>
-                                <a href="#" class="btn-banner">Jelajahi</a>
+                                <a href="#" class="btn-banner">More</a>
                             </div>
                             <div class="col-md-6 text-center">
                                 <img src="{{ asset('assets-guest/images/banner-img.png') }}" class="img-fluid"

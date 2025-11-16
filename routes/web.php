@@ -8,6 +8,7 @@ use App\Http\Controllers\WargaController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JenisSuratController;
+use App\Http\Controllers\PermohonanSuratController;
 use App\Http\Controllers\BerkasPersyaratanController;
 
 Route::get('/', function () {
@@ -27,4 +28,5 @@ Route::resource('/warga', WargaController::class);
 Route::resource('jenis-surat', JenisSuratController::class);
 Route::resource('/user',UserController::class);
 Route::resource('/about',AboutController::class);
+Route::resource('/permohonan',PermohonanSuratController::class);
 

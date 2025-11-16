@@ -407,4 +407,116 @@
         font-size: 2rem;
         color: #fff;
     }
+            body {
+            background-color: #f3f6fa;
+            font-family: 'Poppins', sans-serif;
+            color: #0d1b2a;
+        }
+
+        /* --- Banner Section Styling --- */
+        .banner-section {
+            background-color: #001f3f;
+            color: white;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-section h2 {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .banner-section p {
+            text-align: center;
+        }
+
+        /* --- Form Card Styling --- */
+        .form-card {
+            max-width: 900px;
+            margin: 0 auto 50px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .form-header {
+            background-color: #ff4c4c;
+            color: white;
+            font-weight: 600;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-bottom: 3px solid #001f3f;
+        }
+
+        .form-body {
+            padding: 30px 25px;
+        }
+
+        /* --- Input and Label Styling --- */
+        label {
+            font-weight: 500;
+            color: #001f3f;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 10px 15px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #ff4c4c;
+            box-shadow: 0 0 0 0.25rem rgba(255, 76, 76, 0.25);
+        }
+
+        .invalid-feedback {
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* --- Custom Button Styling --- */
+        .btn-custom-base {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+
+        .btn-submit-custom {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 10px rgba(255, 76, 76, 0.4);
+        }
+
+        .btn-submit-custom:hover {
+            background-color: #e63946;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 76, 76, 0.5);
+            color: white;
+        }
+
+        .btn-back-custom {
+            background-color: #001f3f;
+            color: white;
+            border: none;
+        }
+
+        .btn-back-custom:hover {
+            background-color: #002b5c;
+            transform: translateY(-2px);
+            color: white;
+        }
       </style>
