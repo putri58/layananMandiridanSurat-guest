@@ -48,8 +48,9 @@
                     </div>
 
                     <!-- ID Pemohon (Hidden, diisi otomatis dari user yang login) -->
-                    {{-- Ganti [ID_WARGA_YANG_LOGIN] dengan logic user saat ini: Auth::user()->warga_id --}}
-                    <input type="hidden" name="pemohon_warga_id" value="{{ Auth::user()->warga_id ?? null }}">
+                    
+                    $request->merge(['pemohon_warga_id' => auth()->id()]);
+
 
                     <!-- Jenis ID (Dropdown Select) -->
                     <div class="col-lg-4 col-md-6 mb-3">

@@ -1,21 +1,39 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\PermohonanSurat;
 use App\Models\Jenis_Surat;
+use App\Models\PermohonanSurat;
+use Illuminate\Http\Request;
 
 class PermohonanSuratController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-      $data = PermohonanSurat::with('jenisSurat')->get();
-        return view('pages.permohonanSurat.index', compact('data'));
-    }
+    public function index(Request $request)
+{
+    // Dropdown filter - tidak duplikat
+    $data['jenisSurat'] = Jenis_Surat::select('jenis_id', 'nama_jenis')
+        ->distinct()
+        ->orderBy('nama_jenis')
+        ->get();
+
+    // Kolom yang boleh difilter
+    $filterable = ['status', 'jenis_id'];
+
+    // Kolom yang bisa dicari
+    $searchable = ['nomor_permohonan', 'catatan'];
+
+    // Query utama
+    $data['permohonan'] = PermohonanSurat::with('jenisSurat')
+        ->filter($request, $filterable)
+        ->search($request, $searchable)
+        ->paginate(10)
+        ->withQueryString();
+
+    return view('pages.permohonanSurat.index', $data);
+}
+
 
     /**
      * Show the fomrm for creating a new resource.
@@ -31,14 +49,15 @@ class PermohonanSuratController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nomor_permohonan' => 'required',
-            'jenis_id' => 'required|exists:jenis_surat,jenis_id',
+        PermohonanSurat::create([
+            'nomor_permohonan'  => $request->nomor_permohonan,
+            'pemohon_warga_id'  => auth()->user()->warga_id,
+            'jenis_id'          => $request->jenis_id,
+            'tanggal_pengajuan' => now(),
+            'status'            => 'Menunggu',
         ]);
 
-        PermohonanSurat::create($request->all());
-
-        return redirect()->route('pages.permohonanSurat.index')->with('success', 'Data berhasil ditambahkan');
+        return back()->with('success', 'Permohonan berhasil dibuat!');
     }
 
     /**

@@ -30,16 +30,17 @@ return new class extends Migration
 
     // RELASI KE WARGA
     $table->foreign('pemohon_warga_id')
-          ->references('warga_id') // ✔sesuaikan PK warga
+          ->references('warga_id')
           ->on('warga')
           ->onDelete('cascade');
 
     // RELASI KE JENIS_SURAT
     $table->foreign('jenis_id')
-          ->references('jenis_id') // ✔sesuaikan PK jenis_surat
+          ->references('jenis_id')
           ->on('jenis_surat')
           ->onDelete('cascade');
 });
+
 
     }
 

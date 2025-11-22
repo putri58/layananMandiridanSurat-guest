@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -11,10 +10,17 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data['user'] = User::all();
+        $filterable = ['email_domain'];
+        $searchable = ['name', 'email'];
+        $data['user'] = User::filter($request, $filterable)
+            ->search($request, $searchable)
+            ->paginate(10)
+            ->withQueryString();
+
         return view('pages.user.index', $data);
+
     }
 
     //---------------------------------------------------------
@@ -34,13 +40,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data['name'] = $request->name;
-        $data['email']  = $request->email;
-        $data['password']   = $data['password'] = Hash::make($request->password);;
-        $data['password_confirmation']     = $request->password_confirmation;
+        $data['name']                  = $request->name;
+        $data['email']                 = $request->email;
+        $data['password']              = $data['password']              = Hash::make($request->password);
+        $data['password_confirmation'] = $request->password_confirmation;
 
         User::create($data);
-         return redirect()->route('user.create')->with('success', 'Penambahan Data Berhasil!');
+        return redirect()->route('user.create')->with('success', 'Penambahan Data Berhasil!');
     }
 
     //---------------------------------------------------------
@@ -60,7 +66,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $data ['user'] = User::findOrFail($id);
+        $data['user'] = User::findOrFail($id);
         return view('pages.user.edit', $data);
     }
 

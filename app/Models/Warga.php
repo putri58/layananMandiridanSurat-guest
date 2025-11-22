@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Warga extends Model
 {
-    protected $table        = 'warga';
-    protected $primaryKey   = 'warga_id';
-    protected $fillable     =[
+    protected $table      = 'warga';
+    protected $primaryKey = 'warga_id';
+
+    protected $fillable = [
         'no_ktp',
         'nama',
         'gender',
@@ -16,7 +18,36 @@ class Warga extends Model
         'pekerjaan',
         'phone',
         'email',
-
     ];
 
+    /**
+     * FILTER: berdasarkan kolom tertentu (misalnya gender)
+     */
+    public function scopeFilter(Builder $query, $request, array $filterableColumns): Builder
+    {
+        foreach ($filterableColumns as $column) {
+            if ($request->filled($column)) {
+                $query->where($column, $request->input($column));
+            }
+        }
+        return $query;
+    }
+
+    /**
+     * SEARCH: pencarian bebas berdasarkan kolom tertentu
+     */
+    public function scopeSearch(Builder $query, $request, array $searchableColumns): Builder
+    {
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+
+            $query->where(function ($q) use ($searchableColumns, $search) {
+                foreach ($searchableColumns as $column) {
+                    $q->orWhere($column, 'LIKE', "%{$search}%");
+                }
+            });
+        }
+
+        return $query;
+    }
 }

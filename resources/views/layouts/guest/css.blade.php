@@ -519,4 +519,471 @@
             transform: translateY(-2px);
             color: white;
         }
+         body {
+         background-color: #f3f6fa;
+         font-family: 'Poppins', sans-serif;
+      }
+
+      h2 {
+         text-align: center;
+         font-weight: 700;
+         color: #0d1b2a;
+         margin: 50px 0 30px;
+      }
+
+      .card {
+         border: none;
+         border-radius: 20px;
+         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+         transition: all 0.3s ease;
+         background: #fff;
+         position: relative;
+         overflow: hidden;
+         padding: 25px 20px;
+         text-align: center;
+      }
+
+      .card::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 5px;
+         background: linear-gradient(90deg, #001f3f, #ff4c4c);
+      }
+
+      .card:hover {
+         transform: translateY(-8px);
+         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .card h5 {
+         font-weight: 600;
+         color: #001f3f;
+         margin-top: 10px;
+      }
+
+      .card p {
+         color: #666;
+         margin-bottom: 10px;
+         font-size: 14px;
+      }
+
+      .badge {
+         margin: 3px;
+         background-color: #e8edf7;
+         color: #001f3f;
+         border-radius: 10px;
+         font-size: 13px;
+         padding: 6px 12px;
+         transition: 0.3s;
+      }
+
+      .badge:hover {
+         background-color: #ff4c4c;
+         color: white;
+      }
+
+      .actions {
+         margin-top: 18px;
+      }
+
+      .btn {
+         border-radius: 8px;
+         padding: 7px 14px;
+         font-size: 13px;
+         font-weight: 500;
+         transition: all 0.3s ease;
+      }
+
+      .btn-warning {
+         background-color: #ffb84d;
+         border: none;
+         color: #fff;
+      }
+
+      .btn-warning:hover {
+         background-color: #ff9800;
+         transform: scale(1.05);
+      }
+
+      .btn-danger {
+         background-color: #ff4c4c;
+         border: none;
+         color: #fff;
+      }
+
+      .btn-danger:hover {
+         background-color: #e63946;
+         transform: scale(1.05);
+      }
+
+      .btn-primary {
+         background-color: #001f3f;
+         border: none;
+      }
+
+      .btn-primary:hover {
+         background-color: #002b5c;
+      }
+
+      .no-data {
+         text-align: center;
+         color: #777;
+         font-style: italic;
+         margin-top: 40px;
+      }
+
+      .card-container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 20px;
+      }
+
+      /* Animasi muncul halus */
+      .fade-in {
+         animation: fadeInUp 0.6s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+         from {
+            opacity: 0;
+            transform: translateY(20px);
+         }
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+      body {
+         background-color: #f3f6fa;
+         font-family: 'Poppins', sans-serif;
+      }
+
+      h2 {
+         text-align: center;
+         font-weight: 700;
+         color: #0d1b2a;
+         margin: 50px 0 30px;
+      }
+
+      .card {
+         border: none;
+         border-radius: 20px;
+         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+         transition: all 0.3s ease;
+         background: #fff;
+         position: relative;
+         overflow: hidden;
+         padding: 25px 20px;
+         text-align: center;
+      }
+
+      .card::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 5px;
+         background: linear-gradient(90deg, #001f3f, #ff4c4c);
+      }
+
+      .card:hover {
+         transform: translateY(-8px);
+         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .card h5 {
+         font-weight: 600;
+         color: #001f3f;
+         margin-top: 10px;
+      }
+
+      .card p {
+         color: #666;
+         margin-bottom: 10px;
+         font-size: 14px;
+      }
+
+      .badge {
+         margin: 3px;
+         background-color: #e8edf7;
+         color: #001f3f;
+         border-radius: 10px;
+         font-size: 13px;
+         padding: 6px 12px;
+         transition: 0.3s;
+      }
+
+      .badge:hover {
+         background-color: #ff4c4c;
+         color: white;
+      }
+
+      .actions {
+         margin-top: 18px;
+      }
+
+      .btn {
+         border-radius: 8px;
+         padding: 7px 14px;
+         font-size: 13px;
+         font-weight: 500;
+         transition: all 0.3s ease;
+      }
+
+      .btn-warning {
+         background-color: #ffb84d;
+         border: none;
+         color: #fff;
+      }
+
+      .btn-warning:hover {
+         background-color: #ff9800;
+         transform: scale(1.05);
+      }
+
+      .btn-danger {
+         background-color: #ff4c4c;
+         border: none;
+         color: #fff;
+      }
+
+      .btn-danger:hover {
+         background-color: #e63946;
+         transform: scale(1.05);
+      }
+
+      .btn-primary {
+         background-color: #001f3f;
+         border: none;
+      }
+
+      .btn-primary:hover {
+         background-color: #002b5c;
+      }
+
+      .no-data {
+         text-align: center;
+         color: #777;
+         font-style: italic;
+         margin-top: 40px;
+      }
+
+      .card-container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 20px;
+      }
+
+      /* Animasi muncul halus */
+      .fade-in {
+         animation: fadeInUp 0.6s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+         from {
+            opacity: 0;
+            transform: translateY(20px);
+         }
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+            body {
+                background-color: #f7f8fc;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            h2 {
+                text-align: center;
+                color: #0a1931;
+                font-weight: 700;
+                margin-top: 40px;
+                margin-bottom: 30px;
+            }
+
+            .container-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+                max-width: 1100px;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .card-permohonan {
+                background-color: #fff;
+                border-radius: 16px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+                padding: 20px;
+                transition: all 0.3s ease;
+                border-left: 6px solid #0a1931;
+            }
+
+            .card-permohonan:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            }
+
+            .badge-status {
+                padding: 6px 12px;
+                border-radius: 8px;
+                font-size: 0.75rem;
+                color: white;
+                font-weight: 600;
+            }
+
+            .badge-menunggu {
+                background: #ffc107;
+            }
+
+            .badge-diterima {
+                background: #28a745;
+            }
+
+            .badge-ditolak {
+                background: #dc3545;
+            }
+
+            .btn-add {
+                background-color: #c82333;
+                border: none;
+                padding: 10px 18px;
+                border-radius: 8px;
+                color: white;
+                font-weight: 500;
+            }
+
+            .btn-add:hover {
+                background-color: #0a1931;
+            }
+            body {
+                background-color: #f7f8fc;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            h2 {
+                text-align: center;
+                color: #0a1931;
+                font-weight: 700;
+                margin-top: 40px;
+                margin-bottom: 30px;
+            }
+
+            .container-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+                max-width: 1100px;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .card-jenis {
+                background-color: #fff;
+                border-radius: 16px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+                overflow: hidden;
+                transition: all 0.3s ease;
+                border-top: 6px solid #0a1931;
+                position: relative;
+            }
+
+            .card-jenis:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            }
+
+            .card-header {
+                height: 140px;
+                background: linear-gradient(135deg, #0a1931, #c82333);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                text-align: center;
+                font-weight: 600;
+                font-size: 1.1rem;
+                position: relative;
+            }
+
+            .card-header i {
+                font-size: 35px;
+                margin-bottom: 8px;
+                color: #fff;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+
+            .kode-badge {
+                display: inline-block;
+                background: #0a1931;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 8px;
+                font-size: 0.85rem;
+                margin-bottom: 12px;
+            }
+
+            .card-body h5 {
+                font-weight: 600;
+                color: #0a1931;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .card-body ul {
+                padding-left: 18px;
+                margin-bottom: 0;
+            }
+
+            .card-body li {
+                font-size: 0.9rem;
+                color: #333;
+                line-height: 1.5;
+            }
+
+            .btn-detail {
+                display: inline-block;
+                text-decoration: none;
+                background-color: #c82333;
+                color: #fff;
+                padding: 8px 14px;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+
+            .btn-detail:hover {
+                background-color: #0a1931;
+                color: #fff;
+            }
+
+            .card-footer {
+                text-align: center;
+                padding: 15px;
+                background-color: #f8f9fa;
+            }
+
+            .btn-add {
+                background-color: #c82333;
+                border: none;
+                font-weight: 500;
+                padding: 10px 18px;
+                border-radius: 8px;
+                color: white;
+                transition: all 0.3s ease;
+            }
+
+            .btn-add:hover {
+                background-color: #0a1931;
+            }
       </style>

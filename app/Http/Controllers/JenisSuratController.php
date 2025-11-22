@@ -10,11 +10,21 @@ class jenisSuratController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $data['jenisSurat'] = Jenis_Surat::all();
-           return view('pages.jenisSurat.tabelJenis', $data);
-    }
+   public function index(Request $request)
+{
+    // untuk dropdown filter (distinct)
+    $data['filter'] = Jenis_Surat::select('kode')->distinct()->get();
+    // kolom mana saja yang bisa difilter
+    $filterablecolumns = ['kode'];
+    // kolom yg bisa dicari
+    $searchablecolumns = ['nama_jenis', 'kode'];
+    $data['jenisSurat'] = Jenis_Surat::filter($request, $filterablecolumns, $searchablecolumns)
+        ->search($request, $searchablecolumns)
+        ->paginate(10)
+        ->withQueryString();
+    return view('pages.jenisSurat.tabelJenis', $data);
+}
+
 
     /**
      * Show the form for creating a new resource.
