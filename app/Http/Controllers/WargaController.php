@@ -11,16 +11,19 @@ class WargaController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-    {
-        $data['filter'] = Warga::select('gender')->distinct()->get();
-        $filterablecolumns = ['gender'];
-        $searchablecolumns = ['nama', 'email', 'telp'];
-          $data['warga'] = Warga::filter($request, $filterablecolumns, $searchablecolumns) 
-          ->search($request, $searchablecolumns)
-          ->paginate(10)
-          ->withQueryString();
-           return view('pages.warga.tabelWarga', $data);
-    }
+{
+    $data['filter'] = Warga::select('gender')->distinct()->get();
+    $filterablecolumns = ['gender'];
+    $searchablecolumns = ['nama', 'email', 'telp'];
+
+    $data['warga'] = Warga::filter($request, $filterablecolumns)
+        ->search($request, $searchablecolumns)
+        ->paginate(10)
+        ->withQueryString();
+
+    return view('pages.warga.tabelWarga', $data);
+}
+
 
     /**
      * Show the form for creating a new resource.

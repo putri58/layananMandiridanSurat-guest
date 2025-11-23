@@ -4,17 +4,29 @@
 <div class="container card-container">
    <h2>Daftar Data Warga</h2>
 <div class="table-responsive">
-      <form method="GET" action="{{ route('warga.index') }}" onchange="this.form.submit()" class="mb-3">
-          <div class="row">
-              <div class="col-md-4">
-                  <select name="gender" class="form-select">
-                      <option value="">All Genders</option>
-                      <option value="Male" {{ request('gender')=='Male' ? 'selected' : '' }}>Male</option>
-                      <option value="Female" {{ request('gender')=='Female' ? 'selected' : '' }}>Female</option>
-                  </select>
-              </div>
-          </div>
-      </form>
+    <form method="GET" action="{{ route('warga.index') }}" class="mb-3">
+        <div class="row g-2 align-items-center">
+            <!-- Filter Gender -->
+            <div class="col-md-3">
+                <select name="gender" class="form-select">
+                    <option value="">All Genders</option>
+                    <option value="Male" {{ request('gender') == 'Male' ? 'selected' : '' }}>Male</option>
+                    <option value="Female" {{ request('gender') == 'Female' ? 'selected' : '' }}>Female</option>
+                </select>
+            </div>
+
+            <!-- Search Box -->
+            <div class="col-md-6">
+                <input type="text" name="search" placeholder="Cari Warga..." 
+                       value="{{ request('search') }}" class="form-control">
+            </div>
+
+            <!-- Button Filter -->
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">Filter</button>
+            </div>
+        </div>
+    </form>
    @if($warga->isEmpty())
       <p class="no-data">Belum ada data warga.</p>
    @else

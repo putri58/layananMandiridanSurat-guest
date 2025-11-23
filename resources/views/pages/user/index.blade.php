@@ -10,10 +10,11 @@
         <option value="yahoo.com">yahoo.com</option>
         <option value="outlook.com">outlook.com</option>
     </select>
-
-    <input type="text" name="search" placeholder="Cari nama/email" class="form-control">
-
-    <button type="submit" class="btn btn-primary mt-2">Filter</button>
+   <div class="col-md-3">
+                <input type="text" name="search" placeholder="Cari...." 
+                       value="{{ request('search') }}" class="form-control">
+                       <button type="submit" class="btn btn-primary mt-2">Filter</button>
+            </div>
 </form>
 
       @if($user->isEmpty())

@@ -4,7 +4,7 @@
     <h2>📄 Daftar Permohonan Surat</h2>
 <form method="GET" class="d-flex gap-2 mb-3">
 
-    <select name="jenis_id" class="form-select">
+    <!-- <select name="jenis_id" class="form-select">
     <option value="">-- Filter Jenis Surat --</option>
     @foreach($jenisSurat as $item)
         <option value="{{ $item->jenis_id }}"
@@ -12,7 +12,7 @@
             {{ $item->nama_jenis }}
         </option>
     @endforeach
-</select>
+</select> -->
 
 
     <select name="status" class="form-select">
@@ -20,6 +20,7 @@
         <option value="pending"  {{ request('status')=='pending' ? 'selected' : '' }}>Pending</option>
         <option value="selesai"  {{ request('status')=='selesai' ? 'selected' : '' }}>Selesai</option>
         <option value="ditolak"  {{ request('status')=='ditolak' ? 'selected' : '' }}>Ditolak</option>
+        <button class="btn btn-primary">Filter</button>
     </select>
 
     <input type="text" name="search" placeholder="Cari permohonan..." 

@@ -12,27 +12,33 @@ class PermohonanSuratController extends Controller
      */
     public function index(Request $request)
 {
-    // Dropdown filter - tidak duplikat
     $data['jenisSurat'] = Jenis_Surat::select('jenis_id', 'nama_jenis')
-        ->distinct()
         ->orderBy('nama_jenis')
         ->get();
 
-    // Kolom yang boleh difilter
-    $filterable = ['status', 'jenis_id'];
+    $query = PermohonanSurat::with('jenisSurat');
 
-    // Kolom yang bisa dicari
-    $searchable = ['nomor_permohonan', 'catatan'];
+    // if ($request->filled('jenis_id')) {
+    //     $query->where('jenis_id', $request->input('jenis_id'));
+    // }
 
-    // Query utama
-    $data['permohonan'] = PermohonanSurat::with('jenisSurat')
-        ->filter($request, $filterable)
-        ->search($request, $searchable)
-        ->paginate(10)
-        ->withQueryString();
+    if ($request->filled('status')) {
+        $query->where('status', $request->input('status'));
+    }
+
+    if ($request->filled('search')) {
+        $search = $request->input('search');
+        $query->where(function($q) use ($search) {
+            $q->orWhere('nomor_permohonan', 'like', "%{$search}%")
+              ->orWhere('catatan', 'like', "%{$search}%");
+        });
+    }
+
+    $data['permohonan'] = $query->paginate(10)->withQueryString();
 
     return view('pages.permohonanSurat.index', $data);
 }
+
 
 
     /**

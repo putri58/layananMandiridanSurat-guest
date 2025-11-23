@@ -19,7 +19,7 @@ class PermohonanSurat extends Model
     {
         return $this->belongsTo(Jenis_Surat::class, 'jenis_id', 'jenis_id');
     }
-     public function scopeFilter($query, $request, $filterable)
+    public function scopeFilter($query, $request, $filterable)
 {
     foreach ($filterable as $column) {
         if ($request->filled($column)) {
@@ -28,6 +28,7 @@ class PermohonanSurat extends Model
     }
     return $query;
 }
+
 
 public function scopeSearch($query, $request, $searchable)
 {

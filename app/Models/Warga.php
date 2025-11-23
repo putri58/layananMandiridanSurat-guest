@@ -24,14 +24,15 @@ class Warga extends Model
      * FILTER: berdasarkan kolom tertentu (misalnya gender)
      */
     public function scopeFilter(Builder $query, $request, array $filterableColumns): Builder
-    {
-        foreach ($filterableColumns as $column) {
-            if ($request->filled($column)) {
-                $query->where($column, $request->input($column));
-            }
+{
+    foreach ($filterableColumns as $column) {
+        if ($request->filled($column)) {
+            $query->where($column, $request->input($column));
         }
-        return $query;
     }
+    return $query;
+}
+
 
     /**
      * SEARCH: pencarian bebas berdasarkan kolom tertentu
@@ -50,4 +51,5 @@ class Warga extends Model
 
         return $query;
     }
+    
 }
