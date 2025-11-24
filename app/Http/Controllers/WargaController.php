@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\warga;
+use Illuminate\Http\Request;
 
 class WargaController extends Controller
 {
@@ -64,18 +64,20 @@ class WargaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    public function edit($id)
+{
+    $warga = Warga::findOrFail($id);
+    return view('pages.warga.edit', compact('warga'));
+}
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+public function update(Request $request, $id)
+{
+    $warga = Warga::findOrFail($id);
+    $warga->update($request->all());
+
+    return redirect()->route('warga.index')->with('info', 'Data berhasil diperbarui!');
+}
+
 
     /**
      * Remove the specified resource from storage.

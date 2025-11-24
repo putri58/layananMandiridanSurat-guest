@@ -29,4 +29,6 @@ Route::resource('jenis-surat', JenisSuratController::class);
 Route::resource('/user',UserController::class);
 Route::resource('/about',AboutController::class);
 Route::resource('/permohonan',PermohonanSuratController::class);
+Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
+Route::post('/save','MultipleuploadsController@store')->name('uploads.store');
 

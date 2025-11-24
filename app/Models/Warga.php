@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Warga extends Model
 {
-    protected $table      = 'warga';
+    protected $table      = 'Warga';
     protected $primaryKey = 'warga_id';
 
     protected $fillable = [

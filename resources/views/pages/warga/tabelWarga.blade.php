@@ -17,7 +17,7 @@
 
             <!-- Search Box -->
             <div class="col-md-6">
-                <input type="text" name="search" placeholder="Cari Warga..." 
+                <input type="text" name="search" placeholder="Cari Warga..."
                        value="{{ request('search') }}" class="form-control">
             </div>
 
@@ -27,6 +27,7 @@
             </div>
         </div>
     </form>
+
    @if($warga->isEmpty())
       <p class="no-data">Belum ada data warga.</p>
    @else
@@ -34,7 +35,15 @@
    <div class="row g-4">
       @foreach($warga as $item)
       <div class="col-md-4 col-sm-6 fade-in">
-         <div class="card">
+         <div class="card position-relative">
+
+          <a href="{{ route('warga.edit', $item->warga_id) }}"
+   class="btn btn-sm btn-light position-absolute top-0 end-0 m-2"
+   style="z-index: 999;"
+   title="Edit Data">
+    ✏️
+</a>
+
 
             <h5>{{ $item->nama }}</h5>
             <p class="text-muted">{{ $item->pekerjaan }}</p>
@@ -60,6 +69,7 @@
    <div class="text-end mt-4">
       <a href="{{ route('warga.create') }}" class="btn btn-primary">+ Tambah Warga</a>
       <a href="{{ route('dashboard') }}" class="btn btn-primary">Kembali</a>
+
    </div>
 
 </div>

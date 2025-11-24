@@ -11,7 +11,7 @@
         <option value="outlook.com">outlook.com</option>
     </select>
    <div class="col-md-3">
-                <input type="text" name="search" placeholder="Cari...." 
+                <input type="text" name="search" placeholder="Cari...."
                        value="{{ request('search') }}" class="form-control">
                        <button type="submit" class="btn btn-primary mt-2">Filter</button>
             </div>
@@ -24,6 +24,11 @@
          @foreach($user as $item)
          <div class="col-md-4 col-sm-6 fade-in">
             <div class="card">
+               <a href="{{ route('user.edit', $item->id) }}"
+   class="btn btn-warning btn-sm">
+    Edit
+</a>
+
                <div>
                   <span class="badge">{{ $item->name }}</span>
                   <span class="badge">{{ $item->email }}</span>

@@ -64,21 +64,36 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        $data['user'] = User::findOrFail($id);
-        return view('pages.user.edit', $data);
-    }
+    public function edit(User $user)
+{
+    return view('pages.user.edit', compact('user'));
+}
+
 
     //---------------------------------------------------------
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(Request $request, User $user)
+{
+    $validated = $request->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'password' => 'nullable|min:6|confirmed',
+    ]);
+
+    if ($request->filled('password')) {
+        $validated['password'] = bcrypt($request->password);
+    } else {
+        unset($validated['password']);
     }
+
+    $user->update($validated);
+
+    return redirect()->route('user.index')->with('success', 'User berhasil diperbarui!');
+}
+
 
     //---------------------------------------------------------
 
