@@ -1,15 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\WargaController;
-use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BerkasPersyaratanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JenisSuratController;
 use App\Http\Controllers\PermohonanSuratController;
-use App\Http\Controllers\BerkasPersyaratanController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WargaController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.dashboard');
@@ -26,9 +25,12 @@ Route::get('/auth', [AuthController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('/warga', WargaController::class);
 Route::resource('jenis-surat', JenisSuratController::class);
-Route::resource('/user',UserController::class);
-Route::resource('/about',AboutController::class);
-Route::resource('/permohonan',PermohonanSuratController::class);
-Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
-Route::post('/save','MultipleuploadsController@store')->name('uploads.store');
+Route::resource('/user', UserController::class);
+Route::resource('/about', AboutController::class);
+Route::resource('/permohonan', PermohonanSuratController::class);
+Route::delete('/permohonan/media/{id}', [PermohonanSuratController::class, 'deleteMedia'])
+                ->name('permohonan.deleteMedia');
 
+
+Route::get('/multipleuploads', 'MultipleuploadsController@index')->name('uploads');
+Route::post('/save', 'MultipleuploadsController@store')->name('uploads.store');
