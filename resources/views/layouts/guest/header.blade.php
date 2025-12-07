@@ -17,6 +17,7 @@
             <!-- NAV LINKS -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
+                   
                     <!-- Logo / Beranda -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dashboard') }}">
@@ -46,7 +47,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ route('jenis-surat.create') }}">
+                                <a class="dropdown-item" href="{{ route('user.create') }}">
                                     <i data-feather="folder" class="me-2 text-success"></i> Tambah User
                                 </a>
                             </li>
@@ -94,10 +95,66 @@
                     </li>
                     {{-- endkontak --}}
                     <!-- Login -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">
-                            <img src="{{ asset('assets-guest/images/login.png') }}" alt="login">
-                    </li>
+                    <li class="nav-item dropdown d-flex align-items-center">
+    @if(Auth::check())
+        <a class="nav-link dropdown-toggle d-flex align-items-center" 
+           href="#" 
+           id="dropdownUser"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-expanded="false">
+
+            <img src="{{ asset('assets-guest/images/login.png') }}" 
+                 alt="User"
+                 class="rounded-circle me-2"
+                 width="35" height="35">
+
+            <span class="text-white fw-semibold" style="font-size: 15px;">
+                {{ Auth::user()->name }}
+            </span>
+
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3" aria-labelledby="dropdownUser">
+            <li>
+    <li>
+    <a class="dropdown-item text-danger fw-semibold" 
+       href="{{ route('auth.logout') }}">
+        <i data-feather='log-out' class="me-2"></i> Logout
+    </a>
+    <a class="dropdown-item text-danger fw-semibold" 
+       href="{{ route('auth.logout') }}">
+        <i data-feather='log-out' class="me-2"></i>{{ session('last_login') }}
+    </a>
+</li>
+</li>
+        </ul>
+        <ul class="navbar-nav">
+
+    @if(Auth::check())
+        <li class="nav-item dropdown">
+            <!-- isi dropdown user -->
+        </li>
+
+        <li class="nav-item dropdown ms-lg-3">
+            <!-- item tambahan jika login -->
+        </li>
+
+    @else
+        <li class="nav-item">
+            <a class="btn btn-primary" href="{{ route('auth.login') }}">Login</a>
+        </li>
+    @endif
+
+</ul>
+
+
+    @else
+        <a class="nav-link" href="{{ route('auth') }}">
+            <img src="{{ asset('assets-guest/images/login.png') }}" alt="login" width="35" height="35">
+        </a>
+    @endif
+</li>
                 </ul>
             </div>
         </div>

@@ -32,7 +32,9 @@
                <div>
                   <span class="badge">{{ $item->name }}</span>
                   <span class="badge">{{ $item->email }}</span>
-                  <span class="badge">{{ $item->password }}</span>
+                  <!-- <span class="badge">{{ $item->password }}</span> -->
+                  <span class="badge bg-info text-dark">{{ $item->role_label }}</span>
+
                </div>
             </div>
          </div>

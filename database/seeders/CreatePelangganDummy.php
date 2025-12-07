@@ -15,10 +15,11 @@ class CreatePelangganDummy extends Seeder
         $faker = Factory::create();
 
         foreach (range(1, 100) as $index) {
-            DB::table('user')->insert([
+            DB::table('users')->insert([
                 'name'     => $faker->name,
                 'email'    => $faker->unique()->safeEmail,
                 'password' => $faker->password,
+                'role'     => $faker->randomElement(['Pelanggan', 'Mitra'])
             ]);
         }
     }

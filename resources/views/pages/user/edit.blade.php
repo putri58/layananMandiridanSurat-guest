@@ -87,7 +87,13 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
+                      <div class="mb-3 w-100">
+    <select class="form-select" id="role" name="role" required style="border: 1px solid #ccc; padding: 0.5rem 1rem;">
+        <option value="" disabled selected>— Pilih Role —</option>
+        <option value="Pelanggan">Pelanggan</option>
+        <option value="Mitra">Mitra</option>
+    </select>
+</div>
                 </div> {{-- End Row --}}
 
                 {{-- Tombol Aksi --}}

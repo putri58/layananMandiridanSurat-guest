@@ -986,4 +986,25 @@
             .btn-add:hover {
                 background-color: #0a1931;
             }
+            .navbar .nav-link span {
+    color: #fff;
+    margin-left: 6px;
+    font-weight: 600;
+}
+
+.navbar img.rounded-circle {
+    border: 2px solid #ffffff55;
+    padding: 2px;
+}
+ .form-select {
+        width: 100%; /* Ensures the select box stretches across the available space */
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+
+    .form-select:focus {
+        border-color: #007bff; /* A color change for focus to improve UI */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
       </style>

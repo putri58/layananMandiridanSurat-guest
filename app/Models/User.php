@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -65,6 +66,16 @@ public function scopeFilter(Builder $query, $request, array $filterableColumns):
 
     return $query;
 }
+public function getRoleLabelAttribute()
+{
+    $roleLabels = [
+        'Pelanggan'  => 'Pelanggan',
+        'Mitra'      => 'Mitra',
+    ];
+
+    return $roleLabels[$this->role] ?? 'Unknown'; // Default 'Unknown' jika role tidak dikenali
+}
+
 
 
 
