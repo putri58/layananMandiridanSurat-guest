@@ -16,9 +16,9 @@ class CheckRole
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-         if (Auth::check() && Auth::user()->role == $role) {
-          return $next($request);
+         if (!Auth::check() && Auth::user()->role == $role) {
+          return abort('403');
       }
-       return abort('403');
+       return $next($request);
     }
 }

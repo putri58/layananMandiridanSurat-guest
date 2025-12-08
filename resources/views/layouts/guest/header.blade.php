@@ -5,9 +5,13 @@
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ route('dashboard') }}">
-                <!-- <img src="{{ asset('assets-guest/images/logo.png') }}" alt="Logo" height="45" class="me-2"> -->
-                <span>Layanan Mandiri</span>
-            </a>
+    <!-- Icon kecil seperti favicon -->
+    <img src="{{ asset('assets-guest/images/logobina.png') }}"
+         alt="Logo"
+         class="me-2"
+         style="width: 16px; height: 16px; object-fit: contain;">
+    <span>Layanan Mandiri</span>
+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -17,7 +21,7 @@
             <!-- NAV LINKS -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                   
+
                     <!-- Logo / Beranda -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dashboard') }}">
@@ -97,14 +101,14 @@
                     <!-- Login -->
                     <li class="nav-item dropdown d-flex align-items-center">
     @if(Auth::check())
-        <a class="nav-link dropdown-toggle d-flex align-items-center" 
-           href="#" 
+        <a class="nav-link dropdown-toggle d-flex align-items-center"
+           href="#"
            id="dropdownUser"
            role="button"
            data-bs-toggle="dropdown"
            aria-expanded="false">
 
-            <img src="{{ asset('assets-guest/images/login.png') }}" 
+            <img src="{{ asset('assets-guest/images/login.png') }}"
                  alt="User"
                  class="rounded-circle me-2"
                  width="35" height="35">
@@ -118,11 +122,11 @@
         <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3" aria-labelledby="dropdownUser">
             <li>
     <li>
-    <a class="dropdown-item text-danger fw-semibold" 
+    <a class="dropdown-item text-danger fw-semibold"
        href="{{ route('auth.logout') }}">
         <i data-feather='log-out' class="me-2"></i> Logout
     </a>
-    <a class="dropdown-item text-danger fw-semibold" 
+    <a class="dropdown-item text-danger fw-semibold"
        href="{{ route('auth.logout') }}">
         <i data-feather='log-out' class="me-2"></i>{{ session('last_login') }}
     </a>
@@ -173,7 +177,7 @@
                                 <p class="banner_subtitle">Kemudahan administrasi dalam genggaman Anda.</p>
                             </div>
                             <div class="col-md-6 text-center">
-                                <img src="{{ asset('assets-guest/images/banner-img.png') }}" class="img-fluid"
+                                <img src="{{ asset('assets-guest/images/logobina.png') }}" class="img-fluid"
                                     alt="Banner">
                             </div>
                         </div>
@@ -190,7 +194,7 @@
                                 <a href="#" class="btn-banner">More</a>
                             </div>
                             <div class="col-md-6 text-center">
-                                <img src="{{ asset('assets-guest/images/banner-img.png') }}" class="img-fluid"
+                                <img src="{{ asset('assets-guest/images/logobina.png') }}" class="img-fluid"
                                     alt="Banner">
                             </div>
                         </div>
