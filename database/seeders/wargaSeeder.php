@@ -14,9 +14,10 @@ class wargaSeeder extends Seeder
      */
     public function run(): void
     {
-         $faker = Factory::create();
+         $faker = Factory::create('id_ID');
+        $JumlahData = rand(30, 100);
 
-    foreach (range(1, 100) as $index) {
+    foreach (range(1, $JumlahData) as $index) {
         DB::table('warga')->insert([
                 'no_ktp'    => $faker->unique()->numerify('################'), // 16 digit
                 'nama'      => $faker->name(),

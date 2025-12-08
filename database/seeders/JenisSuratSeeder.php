@@ -10,7 +10,8 @@ class JenisSuratSeeder extends Seeder
 {
     public function run(): void
     {
-        $faker = Factory::create();
+        $faker = Factory::create('id_ID');
+        $JumlahData = rand(30, 100);
 
         $listJenis = [
             'Surat Keterangan Domisili',
@@ -23,7 +24,7 @@ class JenisSuratSeeder extends Seeder
             'Surat Izin Keramaian',
         ];
 
-        foreach (range(1, 100) as $index) {
+        foreach (range(1, $JumlahData) as $index) {
             foreach ($listJenis as $jenis) {
 
                 DB::table('jenis_surat')->insert([

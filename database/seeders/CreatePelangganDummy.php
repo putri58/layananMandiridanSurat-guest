@@ -12,9 +12,10 @@ class CreatePelangganDummy extends Seeder
      */
     public function run()
     {
-        $faker = Factory::create();
+        $faker = Factory::create('id_ID');
+        $JumlahData = rand(30, 100);
 
-        foreach (range(1, 100) as $index) {
+        foreach (range(1, $JumlahData) as $index) {
             DB::table('users')->insert([
                 'name'     => $faker->name,
                 'email'    => $faker->unique()->safeEmail,

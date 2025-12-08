@@ -20,16 +20,16 @@
                      <ul>
                         <li>
                            <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-map-marker" aria-hidden="true"></i></span>It is a long established fact that a<br> reader will be distracted</a>
+                           <span class="padding_left_10"><i class="fa fa-map-marker" aria-hidden="true"></i></span>“Sudah menjadi fakta yang dikenal sejak lama bahwa seorang pembaca akan teralihkan perhatiannya.”</a>
                         </li>
                         <li>
                            <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-phone" aria-hidden="true"></i></span>(+71) 1234567890<br>(+71) 1234567890
+                           <span class="padding_left_10"><i class="fa fa-phone" aria-hidden="true"></i></span>(+62) 85609936799<br>(+62) 81279748571
                            </a>
                         </li>
                         <li>
                            <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-envelope" aria-hidden="true"></i></span>demo@gmail.com
+                           <span class="padding_left_10"><i class="fa fa-envelope" aria-hidden="true"></i></span>putri24si@mahasiswa.pcr.ac.id
                            </a>
                         </li>
                      </ul>

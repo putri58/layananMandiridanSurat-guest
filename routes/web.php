@@ -51,3 +51,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::group(['middleware' => ['checkrole:Pelanggan']], function () {
     Route::get('user', [UserController::class, 'index'])->name('user.index');
 });
+Route::get('/user/{id}', [UserController::class, 'show'])->name('profile.show');
