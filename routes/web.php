@@ -11,7 +11,7 @@ use App\Http\Controllers\WargaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('pages.dashboard');
+    return view('pages.auth.login');
 });
 
 Route::get('/berkas-persyaratan', [BerkasPersyaratanController::class, 'index'])
