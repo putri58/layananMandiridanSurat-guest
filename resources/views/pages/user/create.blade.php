@@ -7,8 +7,8 @@
 <body>
     <section class="banner-section">
         <div class="container">
-            <h2>Form Edit User</h2>
-            <p class="mb-0" style="font-size: 0.95rem; opacity: 0.9;">Silakan perbarui data pengguna dengan benar dan lengkap.</p>
+            <h2>Form Tambah User Baru</h2>
+            <p class="mb-0" style="font-size: 0.95rem; opacity: 0.9;">Silakan isi data pengguna baru dengan benar dan lengkap.</p>
         </div>
     </section>
     
@@ -18,36 +18,26 @@
     </div>
     @endif
     
-    {{-- Container utama form --}}
     <div class="form-card">
         <div class="form-header">
-            Form Edit Pengguna (User)
+            Form Tambah Pengguna Baru
         </div>
         <div class="form-body">
-            {{-- Form untuk update --}}
-            <form action="{{ route('user.edit', $user->id) }}" method="POST">
+            {{-- Form untuk CREATE --}}
+            <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
+                {{-- HAPUS @method('PUT') karena CREATE pakai POST --}}
 
                 <div class="row">
                     {{-- Profile Picture --}}
                     <div class="col-12 mb-4">
                         <div class="mb-3">
                             <label for="profile_picture" class="form-label">Foto Profil</label>
-                            @if($user->profile_picture)
-                                <div class="mb-2">
-                                    <img src="{{ Storage::url($user->profile_picture) }}" 
-                                         alt="Foto Profil" 
-                                         width="100" 
-                                         class="rounded-circle border">
-                                    <p class="small text-muted mt-1">Foto saat ini</p>
-                                </div>
-                            @endif
                             <input type="file" 
                                    class="form-control @error('profile_picture') is-invalid @enderror" 
                                    id="profile_picture" 
                                    name="profile_picture">
-                            <small class="text-muted">Biarkan kosong jika tidak ingin mengubah foto</small>
+                            <small class="text-muted">Upload foto profil (opsional)</small>
                             @error('profile_picture')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -61,7 +51,7 @@
                             class="form-control @error('name') is-invalid @enderror"
                             id="name"
                             name="name"
-                            value="{{ old('name', $user->name) }}"
+                            value="{{ old('name') }}"
                             placeholder="Nama Lengkap"
                             required>
                         @error('name')
@@ -76,7 +66,7 @@
                             class="form-control @error('email') is-invalid @enderror"
                             id="email"
                             name="email"
-                            value="{{ old('email', $user->email) }}"
+                            value="{{ old('email') }}"
                             placeholder="Email"
                             required>
                         @error('email')
@@ -91,24 +81,25 @@
                                 id="role" 
                                 name="role" 
                                 required>
-                            <option value="" disabled>— Pilih Role —</option>
-                            <option value="Pelanggan" {{ old('role', $user->role) == 'Pelanggan' ? 'selected' : '' }}>Pelanggan</option>
-                            <option value="Mitra" {{ old('role', $user->role) == 'Mitra' ? 'selected' : '' }}>Mitra</option>
-                            <option value="Admin" {{ old('role', $user->role) == 'Admin' ? 'selected' : '' }}>Admin</option>
+                            <option value="" disabled selected>— Pilih Role —</option>
+                            <option value="Pelanggan" {{ old('role') == 'Pelanggan' ? 'selected' : '' }}>Pelanggan</option>
+                            <option value="Mitra" {{ old('role') == 'Mitra' ? 'selected' : '' }}>Mitra</option>
+                            <option value="Admin" {{ old('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
                         </select>
                         @error('role')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
 
-                    {{-- Password (opsional) --}}
+                    {{-- Password (WAJIB untuk create) --}}
                     <div class="col-lg-6 col-md-6 mb-3">
-                        <label for="password">Password Baru (opsional)</label>
+                        <label for="password">Password</label>
                         <input type="password"
                             class="form-control @error('password') is-invalid @enderror"
                             id="password"
                             name="password"
-                            placeholder="Kosongkan jika tidak ingin mengubah password">
+                            placeholder="Password"
+                            required>
                         <small class="text-muted">Minimal 8 karakter</small>
                         @error('password')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -117,12 +108,13 @@
 
                     {{-- Konfirmasi Password --}}
                     <div class="col-lg-6 col-md-6 mb-3">
-                        <label for="password_confirmation">Konfirmasi Password Baru</label>
+                        <label for="password_confirmation">Konfirmasi Password</label>
                         <input type="password"
                             class="form-control @error('password_confirmation') is-invalid @enderror"
                             id="password_confirmation"
                             name="password_confirmation"
-                            placeholder="Ulangi password baru">
+                            placeholder="Ulangi password"
+                            required>
                         @error('password_confirmation')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -133,12 +125,8 @@
                 {{-- Tombol Aksi --}}
                 <div class="col-12 mt-4 d-flex justify-content-end">
                     <button type="submit" class="btn-custom-base btn-submit-custom me-2">
-                        💾 UPDATE USER
+                        ➕ TAMBAH USER
                     </button>
-                    {{-- Tombol Batal dan Kembali --}}
-                    <a href="{{ route('user.show', $user->id) }}" class="btn-custom-base btn-back-custom me-2">
-                        🔍 DETAIL
-                    </a>
                     <a href="{{ route('user.index') }}" class="btn-custom-base btn-back-custom">
                         ⬅️ KEMBALI KE DAFTAR
                     </a>
