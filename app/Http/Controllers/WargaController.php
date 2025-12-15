@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\warga;
+use App\Models\Warga;
 use Illuminate\Http\Request;
 
 class WargaController extends Controller
