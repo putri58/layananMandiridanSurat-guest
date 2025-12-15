@@ -478,7 +478,6 @@
         </div>
        <section class="welcome-section">
     <h1 class="welcome-title">TERIMAKASIH!!</h1>
-    <h2 class="welcome-username">{{ Auth::user()->name }}</h2>
 
     <p class="welcome-date">
         <i class="far fa-calendar"></i>
