@@ -10,12 +10,15 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->default('Pelanggan')->after('password');
-
-        });
-    }
+{
+    Schema::table('users', function (Blueprint $table) {
+        if (!Schema::hasColumn('users', 'role')) {
+            $table->string('role')
+                  ->default('Pelanggan')
+                  ->after('password');
+        }
+    });
+}
 
     /**
      * Reverse the migrations.

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('media', function (Blueprint $table) {
             // Primary Key custom (sesuai request awal: media_id)
             $table->id('media_id');
+            //coba
 
             // Kolom Penghubung (Polymorphic Manual)
             $table->string('ref_table'); // Contoh isi: 'persil', 'dokumen_hukum'
@@ -32,7 +33,6 @@ return new class extends Migration
             $table->index(['ref_table', 'ref_id']);
         });
     }
-
     /**
      * Reverse the migrations.
      */
