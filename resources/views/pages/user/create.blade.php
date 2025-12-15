@@ -25,7 +25,7 @@
         </div>
         <div class="form-body">
             {{-- Form untuk update --}}
-            <form action="{{ route('user.update', $user->id) }}" method="POST">
+            <form action="{{ route('user.edit', $user->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
