@@ -60,6 +60,16 @@
                                     <i data-feather="folder" class="me-2 text-success"></i> Tambah Permohonan
                                 </a>
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('berkas.create') }}">
+                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Berkas
+                                </a>
+                            </li>
+                             <li>
+                                <a class="dropdown-item" href="{{ route('riwayat.create') }}">
+                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Status
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     {{-- endtambahdata --}}
@@ -88,6 +98,16 @@
                             <li>
                                 <a class="dropdown-item" href="{{ route('permohonan.index') }}">
                                     <i data-feather="folder" class="me-2 text-success"></i> Daftar Permohonan
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('berkas.index') }}">
+                                    <i data-feather="folder" class="me-2 text-success"></i> Daftar Berkas
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('riwayat.index') }}">
+                                    <i data-feather="folder" class="me-2 text-success"></i> Daftar Status
                                 </a>
                             </li>
                         </ul>

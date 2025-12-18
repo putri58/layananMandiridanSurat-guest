@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\AboutController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BerkasPersyaratanController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\WargaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JenisSuratController;
 use App\Http\Controllers\PermohonanSuratController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\WargaController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BerkasPersyaratanController;
+use App\Http\Controllers\RiwayatStatusSuratController;
 
 Route::get('/', function () {
     return view('pages.auth.login');
@@ -52,3 +53,6 @@ Route::group(['middleware' => ['checkrole:Pelanggan']], function () {
     Route::get('user', [UserController::class, 'index'])->name('user.index');
 });
 Route::get('/user/{id}', [UserController::class, 'show'])->name('profile.show');
+
+Route::resource('berkas', BerkasPersyaratanController::class);
+Route::resource('riwayat', RiwayatStatusSuratController::class);

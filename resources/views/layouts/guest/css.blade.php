@@ -1213,4 +1213,152 @@
    padding: 0.25rem 0.5rem;
    font-size: 0.875rem;
 }
+
+.filter-select {
+    position: relative;
+}
+
+.filter-select-box {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    display: none;
+    z-index: 9999;
+}
+
+.filter-select.open .filter-dropdown {
+    display: block;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    outline: none;
+}
+
+.filter-options {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.filter-option {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.filter-option:hover {
+    background-color: #f1f3f5;
+}
+.card {
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+/* ================= CARD ================= */
+.riwayat-card {
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+/* ================= HEADER ================= */
+h4 {
+    color: #1f2937;
+}
+
+/* ================= LABEL ================= */
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* ================= INPUT & SELECT ================= */
+.form-control,
+.form-select {
+    border-radius: 12px;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.9rem;
+    border: 1px solid #d1d5db;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+/* ================= STATUS SELECT ================= */
+.status-select option[value="Diproses"] {
+    color: #2563eb;
+}
+
+.status-select option[value="Selesai"] {
+    color: #16a34a;
+}
+
+.status-select option[value="Ditolak"] {
+    color: #dc2626;
+}
+
+/* ================= TEXTAREA ================= */
+textarea.form-control {
+    resize: vertical;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    border-radius: 12px;
+    font-size: 0.9rem;
+    padding: 0.55rem 1.4rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    box-shadow: 0 6px 14px rgba(37,99,235,.25);
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    border: none;
+}
+
+/* ================= ALERT ================= */
+.alert {
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1.5rem;
+    }
+}
       </style>
