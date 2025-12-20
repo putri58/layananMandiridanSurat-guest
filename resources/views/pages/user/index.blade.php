@@ -130,7 +130,7 @@
 
                 <div class="profile-wrapper">
                     @if($item->profile_picture)
-                        <img src="{{ asset('storage/uploads/'.$item->profile_picture) }}"
+                        <img src="{{ asset('storage/'.$item->profile_picture) }}"
                              class="profile-img">
                     @else
                         <div class="profile-placeholder">

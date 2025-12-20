@@ -16,7 +16,7 @@ class WargaController extends Controller
     $filterablecolumns = ['gender'];
     $searchablecolumns = ['nama', 'email', 'telp'];
 
-    $data['warga'] = Warga::filter($request, $filterablecolumns)
+    $data['Warga'] = Warga::filter($request, $filterablecolumns)
         ->search($request, $searchablecolumns)
         ->paginate(10)
         ->withQueryString();
