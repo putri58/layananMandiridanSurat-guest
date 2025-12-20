@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WargaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JenisSuratController;
+use App\Http\Controllers\MultipleuploadsController;
 use App\Http\Controllers\PermohonanSuratController;
 use App\Http\Controllers\BerkasPersyaratanController;
 use App\Http\Controllers\RiwayatStatusSuratController;
@@ -56,3 +57,4 @@ Route::get('/user/{id}', [UserController::class, 'show'])->name('profile.show');
 
 Route::resource('berkas', BerkasPersyaratanController::class);
 Route::resource('riwayat', RiwayatStatusSuratController::class);
+Route::resource('media', MultipleuploadsController::class);

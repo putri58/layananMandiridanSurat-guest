@@ -10,17 +10,17 @@
                 <div class="domain_box">
                     <div class="domain_rate">
                         <ul>
-                            <li><a href="#"><span style="color: #8b2791;">.com</span> $11.25</a></li>
-                            <li><a href="#"><span style="color: #8b2791;">.org</span> $12.50</a></li>
-                            <li><a href="#"><span style="color: #8b2791;">.net</span> $14.50 </a></li>
-                            <li><a href="#"><span style="color: #8b2791;">.com</span> $11.50</a></li>
-                            <li><a href="#"><span style="color: #8b2791;">info</span> $9.00</a></li>
-                            <li><a href="#"><span style="color: #8b2791;">xyz</span> $0.99</a></li>
+                            <li><a href="{{ route('warga.index') }}"><span style="color: #8b2791;"></span> Warga</a></li>
+                            <li><a href="{{ route('jenis-surat.index') }}"><span style="color: #8b2791;"></span> Jenis Surat</a></li>
+                            <li><a href="{{ route('user.index') }}"><span style="color: #8b2791;"></span> User </a></li>
+                            <li><a href="{{ route('berkas.index') }}"><span style="color: #8b2791;"></span> Permohonan</a></li>
+                            <li><a href="{{ route('permohonan.index') }}"><span style="color: #8b2791;"></span> Berkas</a></li>
+                            <li><a href="{{ route('riwayat.index') }}"><span style="color: #8b2791;"></span> Status</a></li>
                         </ul>
                     </div>
                     <div class="domain_main">
                         <form class="example" action="#">
-                            <input type="text" placeholder="Search Domain.." name="Search Domain..">
+                            <input type="text" placeholder="Search.." name="Search..">
                             <button type="submit">Search Now</button>
                         </form>
                     </div>
@@ -65,7 +65,7 @@
     <div class="container">
         <div class="text-center mb-5">
             <h2 class="section-title" style="color: #2C3E50; font-weight: 700; position: relative; display: inline-block;">
-                TIM PENGEMBANG
+                DATA PENGEMBANG
                 <div style="height: 3px; width: 80px; background: linear-gradient(90deg, #2C3E50, #4CA1AF); margin: 10px auto 0; border-radius: 2px;"></div>
             </h2>
             <p class="text-muted mt-3">Dikembangkan oleh mahasiswa berdedikasi untuk kemajuan pelayanan publik digital</p>
@@ -203,7 +203,7 @@
                         </h5>
                         <p style="color: #666; max-width: 800px; margin: 0 auto;">
                             Sistem Layanan Mandiri & Surat ini dikembangkan sebagai bagian dari Tugas Besar Mata Kuliah
-                            <strong>Pengembangan Aplikasi Web</strong>. Proyek ini bertujuan untuk mendigitalisasi pelayanan administrasi
+                            <strong>Pemrograman Framework</strong>. Proyek ini bertujuan untuk mendigitalisasi pelayanan administrasi
                             surat-menyurat guna meningkatkan efisiensi dan transparansi.
                         </p>
                     </div>
@@ -232,7 +232,7 @@
                                 <h1 class="dolor_text"></h1>
                                 <h3 class="monthly_text"></h3>
                                 <p class="band_text"></p>
-                                <div class="signup_bt"><a href="#">Sign Up</a></div>
+                                <!-- <div class="signup_bt"><a href="#">Sign Up</a></div> -->
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -242,7 +242,7 @@
                                 <h1 class="dolor_text"></h1>
                                 <h3 class="monthly_text"></h3>
                                 <p class="band_text"></p>
-                                <div class="signup_bt"><a href="#">Sign Up</a></div>
+                                <!-- <div class="signup_bt"><a href="#">Sign Up</a></div> -->
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -252,7 +252,7 @@
                                 <h1 class="dolor_text"></h1>
                                 <h3 class="monthly_text"></h3>
                                 <p class="band_text"></p>
-                                <div class="signup_bt"><a href="#">Sign Up</a></div>
+                                <!-- <div class="signup_bt"><a href="#">Sign Up</a></div> -->
                             </div>
                         </div>
                     </div>

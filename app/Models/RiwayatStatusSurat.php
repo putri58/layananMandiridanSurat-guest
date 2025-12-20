@@ -14,23 +14,27 @@ class RiwayatStatusSurat extends Model
         'permohonan_id',
         'status',
         'petugas_warga_id',
-        'waktu',
         'keterangan',
-    ];
-
-    protected $casts = [
-        'waktu' => 'datetime',
+        'waktu',
     ];
 
     public function permohonan()
 {
-    return $this->belongsTo(PermohonanSurat::class, 'permohonan_id', 'permohonan_id');
+    return $this->belongsTo(
+        PermohonanSurat::class,
+        'permohonan_id',
+        'permohonan_id'
+    );
 }
 
 public function petugas()
 {
-    return $this->belongsTo(Warga::class, 'petugas_warga_id', 'id');
+    return $this->belongsTo(
+        Warga::class,
+        'petugas_warga_id',
+        'warga_id'
+    );
+}
 }
 
-}
 

@@ -1,6 +1,8 @@
 <?php
 namespace App\Models;
 
+use App\Models\Warga;
+use App\Models\RiwayatStatusSurat;
 use Illuminate\Database\Eloquent\Model;
 
 class PermohonanSurat extends Model
@@ -28,6 +30,26 @@ class PermohonanSurat extends Model
     {
         return $this->belongsTo(Warga::class, 'pemohon_warga_id', 'warga_id');
     }
+    public function pemohon()
+{
+    return $this->belongsTo(
+        Warga::class,
+        'pemohon_warga_id',
+        'warga_id'
+    );
+}
+
+public function riwayatStatus()
+{
+    return $this->hasMany(
+        RiwayatStatusSurat::class,
+        'permohonan_id',
+        'permohonan_id'
+    );
+}
+
+
+
 
     public function attachments()
     {

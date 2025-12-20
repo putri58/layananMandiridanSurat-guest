@@ -4,123 +4,86 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
-
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-white">
-                    <h5 class="mb-0 fw-semibold">Tambah Berkas</h5>
+                    <h5 class="mb-0 fw-semibold">Tambah Berkas Persyaratan</h5>
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('berkas.store') }}" enctype="multipart/form-data">
+                    <form method="POST"
+                          action="{{ route('berkas.store') }}"
+                          enctype="multipart/form-data">
                         @csrf
 
                         {{-- PERMOHONAN SURAT --}}
                         <div class="mb-3">
-                            <label class="form-label">Permohonan Surat</label>
+                            <label class="form-label fw-medium">Permohonan Surat</label>
 
-                            {{-- value yang dikirim ke controller --}}
-                            <input type="hidden"
-                                   name="permohonan_surat_id"
-                                   id="permohonan_surat_id"
-                                   value="{{ old('permohonan_surat_id') }}"
-                                   required>
+                            <select class="form-select @error('permohonan_id') is-invalid @enderror"
+                                    name="permohonan_id"
+                                    required>
+                                <option value="">-- Pilih Permohonan Surat --</option>
 
-                            <div class="filter-select" id="permohonanSelect">
-                                <div class="filter-select-box" id="permohonanToggle">
-                                    <span id="permohonanLabel">
-                                        -- Pilih Permohonan Surat --
-                                    </span>
-                                    <span class="caret">▾</span>
-                                </div>
+                                @foreach ($permohonan as $p)
+                                    <option value="{{ $p->permohonan_id }}"
+                                        {{ old('permohonan_id') == $p->permohonan_id ? 'selected' : '' }}>
+                                        #{{ str_pad($p->permohonan_id, 4, '0', STR_PAD_LEFT) }}
+                                        - {{ $p->pemohon->nama_lengkap }}
+                                        ({{ $p->jenisSurat->nama_jenis }})
+                                    </option>
+                                @endforeach
+                            </select>
 
-                                <div class="filter-dropdown">
-                                    <input type="text"
-                                           class="filter-input"
-                                           placeholder="Cari permohonan...">
-
-                                    <div class="filter-options">
-                                        @foreach ($permohonans as $p)
-                                            <div class="filter-option"
-                                                 data-id="{{ $p->permohonan_id }}">
-                                                #{{ str_pad($p->permohonan_id, 4, '0', STR_PAD_LEFT) }}
-                                                — {{ $p->warga->nama_lengkap ?? 'Tanpa Nama' }}
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-
-                            @error('permohonan_surat_id')
-                                <small class="text-danger">{{ $message }}</small>
+                            @error('permohonan_id')
+                                <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
+
+                            @if($permohonan->isEmpty())
+                                <div class="alert alert-warning mt-2">
+                                    Tidak ada permohonan aktif.
+                                </div>
+                            @endif
                         </div>
 
                         {{-- NAMA BERKAS --}}
                         <div class="mb-3">
-                            <label class="form-label">Nama Berkas</label>
+                            <label class="form-label fw-medium">Nama Berkas</label>
                             <input type="text"
                                    name="nama_berkas"
-                                   class="form-control"
-                                   placeholder="Contoh: KTP, KK, Surat Domisili"
+                                   class="form-control @error('nama_berkas') is-invalid @enderror"
+                                   value="{{ old('nama_berkas') }}"
                                    required>
+                            @error('nama_berkas')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
-                        {{-- MEDIA / FILE BERKAS --}}
-<div class="mb-4">
-    <label class="form-label">Upload File Berkas</label>
 
-    <input type="file"
-           name="media[]"
-           class="form-control"
-           multiple
-           accept=".pdf,.jpg,.jpeg,.png">
-
-    <small class="text-muted">
-        Format yang diperbolehkan: PDF, JPG, PNG. Bisa upload lebih dari satu file.
-    </small>
-
-    @error('media')
-        <small class="text-danger d-block">{{ $message }}</small>
-    @enderror
-
-    @error('media.*')
-        <small class="text-danger d-block">{{ $message }}</small>
-    @enderror
-</div>
-
-
-                        {{-- STATUS VALID --}}
-<div class="mb-4">
-    <div class="form-check d-flex align-items-center gap-2">
-        <input class="form-check-input mt-0"
-               type="checkbox"
-               name="valid"
-               value="1"
-               id="valid">
-
-        <label class="form-check-label fw-semibold" for="valid">
-            Tandai sebagai valid
-        </label>
-    </div>
-
-    <small class="text-muted d-block ms-4 mt-1">
-        Centang jika berkas sudah diverifikasi dan memenuhi persyaratan
-    </small>
-</div>
-
+                        {{-- FILE --}}
+                        <div class="mb-4">
+                            <label class="form-label fw-medium">Upload File</label>
+                            <input type="file"
+                                   name="berkas_file"
+                                   class="form-control @error('berkas_file') is-invalid @enderror"
+                                   accept=".pdf,.jpg,.jpeg,.png"
+                                   required>
+                            @error('berkas_file')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
 
                         <div class="d-flex justify-content-end gap-2">
-                            <a href="{{ route('berkas.index') }}" class="btn btn-light">
-                                Batal
-                            </a>
-                            <button type="submit" class="btn btn-primary">
-                                Simpan
+                            <a href="{{ route('berkas.index') }}"
+                               class="btn btn-outline-secondary">Kembali</a>
+
+                            <button type="submit"
+                                    class="btn btn-primary"
+                                    {{ $permohonan->isEmpty() ? 'disabled' : '' }}>
+                                Upload
                             </button>
                         </div>
-
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

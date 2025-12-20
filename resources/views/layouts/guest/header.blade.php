@@ -33,48 +33,124 @@
                         <a class="nav-link" href="{{ route('about.index') }}">Tentang</a>
                     </li>
                     {{-- endabout --}}
-                    <!-- Tambah Data -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white fw-semibold px-3" href="#" id="menuLayanan"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i data-feather="layers" class="me-1"></i> Layanan
-                        </a>
-                        <ul class="dropdown-menu shadow-sm border-0 rounded-3" aria-labelledby="menuLayanan">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('warga.create') }}">
-                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Warga
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('jenis-surat.create') }}">
-                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Jenis
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('user.create') }}">
-                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah User
-                                </a>
-                            </li>
-                             <li>
-                                <a class="dropdown-item" href="{{ route('permohonan.create') }}">
-                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Permohonan
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('berkas.create') }}">
-                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Berkas
-                                </a>
-                            </li>
-                             <li>
-                                <a class="dropdown-item" href="{{ route('riwayat.create') }}">
-                                    <i data-feather="folder" class="me-2 text-success"></i> Tambah Status
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    {{-- endtambahdata --}}
+                    <!-- NavBar -->
+                     <li class="nav-item dropdown guest-nav-item">
+    <a class="nav-link dropdown-toggle guest-nav-link text-white fw-semibold px-3"
+        href="#" id="menuWarga" role="button" data-bs-toggle="dropdown">
+        <i data-feather="layers" class="me-1"></i> Warga
+    </a>
+    <ul class="dropdown-menu guest-dropdown-menu shadow-sm" aria-labelledby="menuWarga">
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('warga.create') }}">
+                <i data-feather="folder" class="me-2"></i> Tambah Warga
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('warga.index') }}">
+                <i data-feather="folder" class="me-2"></i> Data Warga
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item dropdown guest-nav-item">
+    <a class="nav-link dropdown-toggle guest-nav-link text-white fw-semibold px-3"
+        href="#" id="menuJenis" role="button" data-bs-toggle="dropdown">
+        <i data-feather="layers" class="me-1"></i> Jenis
+    </a>
+    <ul class="dropdown-menu guest-dropdown-menu shadow-sm" aria-labelledby="menuJenis">
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('jenis-surat.create') }}">
+                <i data-feather="folder" class="me-2"></i> Tambah Jenis Surat
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('jenis-surat.index') }}">
+                <i data-feather="folder" class="me-2"></i> Data Jenis Surat
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item dropdown guest-nav-item">
+    <a class="nav-link dropdown-toggle guest-nav-link text-white fw-semibold px-3"
+        href="#" id="menuUser" role="button" data-bs-toggle="dropdown">
+        <i data-feather="layers" class="me-1"></i> User
+    </a>
+    <ul class="dropdown-menu guest-dropdown-menu shadow-sm" aria-labelledby="menuUser">
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('user.create') }}">
+                <i data-feather="folder" class="me-2"></i> Tambah User
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('user.index') }}">
+                <i data-feather="folder" class="me-2"></i> Data User
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item dropdown guest-nav-item">
+    <a class="nav-link dropdown-toggle guest-nav-link text-white fw-semibold px-3"
+        href="#" id="menuPermohonan" role="button" data-bs-toggle="dropdown">
+        <i data-feather="layers" class="me-1"></i> Permohonan
+    </a>
+    <ul class="dropdown-menu guest-dropdown-menu shadow-sm" aria-labelledby="menuPermohonan">
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('permohonan.create') }}">
+                <i data-feather="folder" class="me-2"></i> Tambah Permohonan
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('permohonan.index') }}">
+                <i data-feather="folder" class="me-2"></i> Daftar Permohonan
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item dropdown guest-nav-item">
+    <a class="nav-link dropdown-toggle guest-nav-link text-white fw-semibold px-3"
+        href="#" id="menuBerkas" role="button" data-bs-toggle="dropdown">
+        <i data-feather="layers" class="me-1"></i> Berkas
+    </a>
+    <ul class="dropdown-menu guest-dropdown-menu shadow-sm" aria-labelledby="menuBerkas">
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('berkas.create') }}">
+                <i data-feather="folder" class="me-2"></i> Tambah Berkas
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('berkas.index') }}">
+                <i data-feather="folder" class="me-2"></i> Daftar Berkas
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="nav-item dropdown guest-nav-item">
+    <a class="nav-link dropdown-toggle guest-nav-link text-white fw-semibold px-3"
+        href="#" id="menuRiwayat" role="button" data-bs-toggle="dropdown">
+        <i data-feather="layers" class="me-1"></i> Riwayat
+    </a>
+    <ul class="dropdown-menu guest-dropdown-menu shadow-sm" aria-labelledby="menuRiwayat">
+        <!-- <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('riwayat.create') }}">
+                <i data-feather="folder" class="me-2"></i> Tambah Status
+            </a>
+        </li> -->
+        <li>
+            <a class="dropdown-item guest-dropdown-item" href="{{ route('riwayat.index') }}">
+                <i data-feather="folder" class="me-2"></i> Daftar Status
+            </a>
+        </li>
+    </ul>
+</li>
+
+                    {{-- EndNavBar --}}
                     {{-- datalist --}}
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white fw-semibold px-3" href="#" id="menuLayanan"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i data-feather="layers" class="me-1"></i> DATA
@@ -111,13 +187,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     {{-- enddatalist --}}
-                    {{-- kontak --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about.index') }}">Kontak</a>
-                    </li>
-                    {{-- endkontak --}}
                     <!-- Login -->
                     <li class="nav-item dropdown d-flex align-items-center">
     @if(Auth::check())
@@ -128,10 +199,12 @@
            data-bs-toggle="dropdown"
            aria-expanded="false">
 
-            <img src="{{ asset('assets-guest/images/login.png') }}"
-                 alt="User"
-                 class="rounded-circle me-2"
-                 width="35" height="35">
+            <img src="{{ Auth::user()->profile_picture
+        ? asset('storage/uploads/' . Auth::user()->profile_picture)
+        : asset('assets-admin/images/default-profile.png') }}"
+     alt="Profile Picture"
+     class="avatar-circle"
+     style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
 
             <span class="text-white fw-semibold" style="font-size: 15px;">
                 {{ Auth::user()->name }}
@@ -221,98 +294,10 @@
                     </div>
                 </div>
             </div>
-
-            <!-- SLIDE CONTROLS -->
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-         <span class="fa fa-angle-left"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-         <span class="fa fa-angle-right"></span>
-      </button>
-   </div>
-</section> -->
 </header>
 
 <!-- ================= STYLES ================= -->
-<style>
-    /* body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #f8f9fa;
-    } */
 
-    /* ===== NAVBAR ===== */
-    /* .navbar {
-        background-color: #0a1931;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-        padding: 10px 0;
-        transition: all 0.3s ease;
-    }
-
-    .navbar-brand {
-        color: #fff;
-        font-size: 1.25rem;
-        letter-spacing: 0.5px;
-    }
-
-    .navbar-brand span {
-        color: #ff4c4c;
-        font-weight: 600;
-    }
-
-    .navbar-nav .nav-link {
-        color: #fff;
-        font-weight: 500;
-        margin-left: 20px;
-        transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-        color: #ff4c4c !important;
-    } */
-
-    /* ===== BANNER ===== */
-    /* .banner_section {
-        background: linear-gradient(135deg, #ffffffff 60%, #c82333);
-        color: #fff;
-        margin-top: 70px;
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    .banner_title {
-        font-weight: 700;
-        font-size: 2.5rem;
-        line-height: 1.3;
-        margin-bottom: 15px;
-    }
-
-    .banner_subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 25px;
-    }
-
-    .btn-banner {
-        background-color: #ff4c4c;
-        color: #fff;
-        padding: 10px 22px;
-        border-radius: 8px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: background 0.3s ease;
-    }
-
-    .btn-banner:hover {
-        background-color: #fff;
-        color: #0a1931;
-    }
-
-    .carousel-control-prev span,
-    .carousel-control-next span {
-        font-size: 2rem;
-        color: #fff;
-    } */
-</style>
 
 <!-- ================= SCRIPTS ================= -->
 <script src="{{ asset('assets-guest/js/bootstrap.bundle.min.js') }}"></script>

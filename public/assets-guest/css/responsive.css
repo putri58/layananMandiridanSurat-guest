@@ -344,9 +344,35 @@
         padding-top: 40px;
     }
 
-    .domain_section {
-        display: none;
-    }
+   /* .domain_section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+} */
+    .hero-domain {
+    min-height: 100vh;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-domain::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #f08a95, #e84b5a);
+}
+
+.hero-domain .container {
+    position: relative;
+    z-index: 1;
+}
+
 
     .banner_img {
         margin-top: 20px;
@@ -518,9 +544,9 @@
         padding-top: 40px;
     }
 
-    .domain_section {
+    /* .domain_section {
         display: none;
-    }
+    } */
 
     .banner_img {
         margin-top: 20px;

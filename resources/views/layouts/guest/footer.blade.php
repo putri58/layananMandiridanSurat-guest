@@ -51,3 +51,17 @@
             </div>
          </div>
       </div>
+
+      <!-- Copyright Section -->
+      <div class="copyright_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="copyright_text mb-0">
+                    &copy; {{ date('Y') }} All Rights Reserved.
+                    Design by Free Html Templates. Distributed by ThemeWagon
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

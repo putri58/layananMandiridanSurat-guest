@@ -1349,16 +1349,102 @@ textarea.form-control {
     border: none;
 }
 
-/* ================= ALERT ================= */
 .alert {
     border-radius: 12px;
     font-size: 0.9rem;
 }
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .card-body {
         padding: 1.5rem;
     }
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.card {
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-2px);
+}
+.text-truncate {
+    max-width: 200px;
+}
+.badge {
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+}
+.hero-domain {
+    min-height: 100vh;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-domain::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #f08a95, #e84b5a);
+}
+
+.hero-domain .container {
+    position: relative;
+    z-index: 1;
+}
+/* NAVBAR */
+nav.guest-navbar {
+    background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+}
+
+/* LINK */
+nav.guest-navbar .guest-nav-link {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav.guest-navbar .guest-nav-link:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* DROPDOWN */
+nav.guest-navbar .guest-dropdown-menu {
+    border-radius: 14px;
+    border: none;
+    padding: 10px;
+}
+
+/* ITEM */
+nav.guest-navbar .guest-dropdown-item {
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+nav.guest-navbar .guest-dropdown-item:hover {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+}
+
 }
       </style>

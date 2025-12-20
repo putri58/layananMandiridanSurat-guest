@@ -1,185 +1,176 @@
 @extends('layouts.guest.app')
-
 @section('content')
 
-<div class="py-4">
-    <div class="d-flex justify-content-between flex-wrap">
-        <div>
-            <h1 class="h4">Tambah Berkas</h1>
-            <p class="mb-0">Unggah berkas permohonan surat</p>
-        </div>
-        <div>
-            <a href="{{ route('permohonan.index') }}" class="btn btn-secondary">
-                <i class="fas fa-arrow-left me-1"></i> Kembali
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12 col-lg-8">
-        <div class="card border-0 shadow">
-            <div class="card-header bg-light">
-                <h6 class="mb-0">
-                    <i class="fas fa-file-upload me-2"></i> Form Tambah Berkas
-                </h6>
-            </div>
-
-            <div class="card-body">
-                <form method="POST" action="{{ route('media.store') }}" enctype="multipart/form-data">
-                    @csrf
-
-                    {{-- PERMOHONAN --}}
-                    <div class="mb-3">
-                        <label class="form-label">Permohonan Surat</label>
-                        <input type="hidden" name="permohonan_surat_id" id="permohonan_id" required>
-
-                        <div class="filter-select" id="permohonanSelect">
-                            <div class="filter-box">
-                                <span id="selectedText">-- Pilih Permohonan --</span>
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-
-                            <div class="filter-dropdown">
-                                <input type="text" class="filter-input" placeholder="Cari permohonan...">
-
-                                <div class="filter-list">
-                                    @foreach ($permohonans as $p)
-                                        <div class="filter-item"
-                                            data-id="{{ $p->id }}">
-                                            <strong>PM{{ str_pad($p->id, 4, '0', STR_PAD_LEFT) }}</strong><br>
-                                            <small class="text-muted">
-                                                {{ $p->warga->nama_lengkap ?? '-' }}
-                                            </small>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- NAMA BERKAS --}}
-                    <div class="mb-3">
-                        <label class="form-label">Nama Berkas</label>
-                        <input type="text" name="nama_berkas" class="form-control"
-                            placeholder="Contoh: KTP, KK, Surat Domisili" required>
-                    </div>
-
-                    {{-- FILE --}}
-                    <div class="mb-3">
-                        <label class="form-label">Upload File</label>
-                        <input type="file" name="file" class="form-control" required>
-                    </div>
-
-                    {{-- BUTTON --}}
-                    <div class="d-flex justify-content-end gap-2">
-                        <a href="{{ route('permohonan.index') }}" class="btn btn-outline-secondary">
-                            Batal
-                        </a>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-save me-1"></i> Simpan
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-{{-- CSS --}}
 <style>
-.filter-select {
-    position: relative;
+.card-container {
+    margin-top: 30px;
 }
 
-.filter-box {
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    padding: 10px 12px;
-    background: #fff;
-    cursor: pointer;
+.profile-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #e9ecef;
+}
+
+.profile-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #6c757d;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.filter-dropdown {
+.btn-edit {
     position: absolute;
-    top: 110%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-    display: none;
-    z-index: 9999;
+    top: 12px;
+    right: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: 0.2s;
+    z-index: 10;
+    text-decoration: none;
 }
 
-.filter-select.open .filter-dropdown {
-    display: block;
-}
-
-.filter-input {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #dee2e6;
-    padding: 8px 10px;
-    outline: none;
-}
-
-.filter-list {
-    max-height: 220px;
-    overflow-y: auto;
-}
-
-.filter-item {
-    padding: 10px 12px;
-    cursor: pointer;
-}
-
-.filter-item:hover {
+.btn-edit:hover {
     background: #f1f3f5;
+    transform: scale(1.05);
+}
+
+.card {
+    border-radius: 12px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.badge-role {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.no-data {
+    text-align: center;
+    color: #6c757d;
+    margin-top: 30px;
 }
 </style>
 
-{{-- JS --}}
-<script>
-const select = document.getElementById('permohonanSelect');
-const box = select.querySelector('.filter-box');
-const text = document.getElementById('selectedText');
-const hidden = document.getElementById('permohonan_id');
-const input = select.querySelector('.filter-input');
-const items = select.querySelectorAll('.filter-item');
+<div class="container card-container">
+    <h2>Daftar Data User</h2>
 
-box.onclick = () => {
-    select.classList.toggle('open');
-    input.focus();
-};
+    <form method="GET" action="{{ route('user.index') }}" class="mb-3">
+        <div class="row g-2 align-items-center">
+            <div class="col-md-3">
+                <select name="role" class="form-select">
+                    <option value="">All Roles</option>
+                    <option value="Admin" {{ request('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
+                    <option value="Mitra" {{ request('role') == 'Mitra' ? 'selected' : '' }}>Mitra</option>
+                    <option value="Pelanggan" {{ request('role') == 'Pelanggan' ? 'selected' : '' }}>Pelanggan</option>
+                </select>
+            </div>
 
-items.forEach(item => {
-    item.onclick = () => {
-        text.innerHTML = item.innerHTML;
-        hidden.value = item.dataset.id;
-        select.classList.remove('open');
-        input.value = '';
-        items.forEach(i => i.style.display = 'block');
-    };
-});
+            <div class="col-md-6">
+                <input type="text"
+                       name="search"
+                       class="form-control"
+                       placeholder="Cari User..."
+                       value="{{ request('search') }}">
+            </div>
 
-input.onkeyup = () => {
-    const val = input.value.toLowerCase();
-    items.forEach(i => {
-        i.style.display = i.textContent.toLowerCase().includes(val)
-            ? 'block'
-            : 'none';
-    });
-};
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">
+                    Filter
+                </button>
+            </div>
+        </div>
+    </form>
 
-document.addEventListener('click', e => {
-    if (!select.contains(e.target)) {
-        select.classList.remove('open');
-    }
-});
-</script>
+    @if($user->isEmpty())
+        <p class="no-data">Belum ada data user.</p>
+    @else
+
+    <div class="row g-4">
+        @foreach($user as $item)
+        <div class="col-md-4 col-sm-6 fade-in">
+            <div class="card position-relative">
+
+                <a href="{{ route('user.edit', $item->id) }}"
+                   class="btn-edit"
+                   title="Edit User">
+                    ✏️
+                </a>
+
+                <div class="profile-wrapper">
+                    @if($item->profile_picture)
+                        <img src="{{ asset('storage/uploads/'.$item->profile_picture) }}"
+                             class="profile-img">
+                    @else
+                        <div class="profile-placeholder">
+                            {{ strtoupper(substr($item->name, 0, 1)) }}
+                        </div>
+                    @endif
+                </div>
+
+                <h5 class="text-center mb-1">{{ $item->name }}</h5>
+                <p class="text-muted text-center mb-2">{{ $item->email }}</p>
+
+                <div class="text-center">
+                    <span class="badge badge-role
+                        @if($item->role == 'Admin') bg-danger
+                        @elseif($item->role == 'Mitra') bg-warning text-dark
+                        @else bg-primary
+                        @endif">
+                        {{ $item->role }}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+    <div class="mt-3">
+        {{ $user->links('pagination::bootstrap-5') }}
+    </div>
+
+    @endif
+
+    <div class="text-end mt-4">
+        <a href="{{ route('user.create') }}" class="btn btn-primary">
+            + Tambah User
+        </a>
+        <a href="{{ route('dashboard') }}" class="btn btn-secondary">
+            Kembali
+        </a>
+    </div>
+</div>
 
 @endsection
