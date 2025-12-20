@@ -200,11 +200,12 @@
            aria-expanded="false">
 
             <img src="{{ Auth::user()->profile_picture
-        ? asset('storage/uploads/' . Auth::user()->profile_picture)
-        : asset('assets-admin/images/default-profile.png') }}"
+            ? asset('storage/' . Auth::user()->profile_picture)
+            : asset('assets-admin/images/default-profile.png') }}"
      alt="Profile Picture"
      class="avatar-circle"
      style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+
 
             <span class="text-white fw-semibold" style="font-size: 15px;">
                 {{ Auth::user()->name }}

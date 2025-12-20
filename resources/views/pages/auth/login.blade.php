@@ -11,7 +11,7 @@
         </div>
 
         <!-- Title -->
-        <h1 class="auth-title">Welcome Back</h1>
+        <h1 class="auth-title">Welcome</h1>
         <p class="auth-subtitle">Sign in to continue exploring our platform</p>
 
         <!-- Error -->
