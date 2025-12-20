@@ -16,7 +16,7 @@ class WargaController extends Controller
     $filterablecolumns = ['gender'];
     $searchablecolumns = ['nama', 'email', 'telp'];
 
-    $data['Warga'] = Warga::filter($request, $filterablecolumns)
+    $data['warga'] = Warga::filter($request, $filterablecolumns)
         ->search($request, $searchablecolumns)
         ->paginate(10)
         ->withQueryString();
@@ -82,10 +82,13 @@ public function update(Request $request, $id)
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        $user->delete();
-        return redirect()->route('admin.users.index')
-                         ->with('success', 'User berhasil dihapus!');
-    }
+    public function destroy($id)
+{
+    $warga = Warga::findOrFail($id);
+    $warga->delete();
+
+    return redirect()->route('warga.index')
+        ->with('success', 'Data warga berhasil dihapus!');
+}
+
 }
