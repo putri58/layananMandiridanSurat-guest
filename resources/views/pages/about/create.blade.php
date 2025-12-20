@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     @extends('layouts.guest.app')
     @section('content')
 </head>
-
 <body>
     <section class="about-section py-5">
         <div class="container">
@@ -210,7 +208,7 @@
                 <h2 class="fw-bold mb-4">Didukung oleh Tim Profesional</h2>
                 <p class="mb-5">Tim ahli yang berdedikasi untuk memberikan pelayanan terbaik bagi masyarakat</p>
                 
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                <img src="{{ asset('assets-guest/images//rapat2.jpg') }}" 
                      alt="Professional Team" 
                      class="img-fluid rounded shadow"
                      style="max-height: 400px; object-fit: cover; width: 100%;">
